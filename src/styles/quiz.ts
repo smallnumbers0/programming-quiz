@@ -48,13 +48,13 @@ export const quizStyles = `
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(145deg, #9333ea 0%, #7c3aed 100%);
-    color: white;
-    border: 2px solid #9333ea;
+    background: transparent;
+    color: #9333ea;
+    border: none;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
+    border-radius: 0;
+    font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -65,9 +65,10 @@ export const quizStyles = `
   }
 
   .exit-button:hover {
-    background: linear-gradient(145deg, #a855f7 0%, #8b5cf6 100%);
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
-    transform: translateY(-50%) scale(1.1);
+    background: transparent;
+    color: #a855f7;
+    box-shadow: none;
+    transform: translateY(-50%) scale(1.2);
   }
 
   .question-content h3 {
