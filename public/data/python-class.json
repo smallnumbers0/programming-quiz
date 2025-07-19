@@ -1,0 +1,472 @@
+[
+  {
+    "question": "Which keyword is used to define a function in Python?",
+    "a": "function",
+    "b": "def",
+    "c": "define",
+    "d": "func",
+    "answer": "b",
+    "correctExplanation": "Perfect! 'def' is the keyword that starts every function definition in Python. It's short for 'define' and tells Python you're creating a new function. Follow it with the function name, parameters in parentheses, and a colon to start your function block.",
+    "incorrectExplanation": "The correct answer is 'def'. This is Python's keyword for defining functions. While 'function' and 'define' might seem logical, they're not Python keywords. 'func' isn't used either. Remember: 'def function_name():' is the Python way to create functions."
+  },
+  {
+    "question": "What is the correct way to create a list in Python?",
+    "a": "list = (1, 2, 3)",
+    "b": "list = {1, 2, 3}",
+    "c": "list = [1, 2, 3]",
+    "d": "list = <1, 2, 3>",
+    "answer": "c",
+    "correctExplanation": "Exactly right! Square brackets [] are used to create lists in Python. Lists are ordered, mutable collections that can store different data types. They're one of the most fundamental and useful data structures in Python programming.",
+    "incorrectExplanation": "The correct answer is square brackets [1, 2, 3]. Parentheses () create tuples, curly braces {} create sets (or dictionaries with key-value pairs), and angle brackets <> aren't valid Python syntax. Lists use square brackets and are mutable, ordered collections."
+  },
+  {
+    "question": "Which method is used to add an element to the end of a list?",
+    "a": "add()",
+    "b": "insert()",
+    "c": "append()",
+    "d": "push()",
+    "answer": "c",
+    "correctExplanation": "Correct! The append() method adds a single element to the end of a list. It's one of the most commonly used list methods in Python. Unlike insert() which can add at any position, append() always adds to the end, making the list longer by one element.",
+    "incorrectExplanation": "The correct answer is 'append()'. This method adds elements to the end of a list. 'add()' is used with sets, 'insert()' adds at a specific index (not necessarily the end), and 'push()' is from other languages like JavaScript - Python uses 'append()' instead."
+  },
+  {
+    "question": "What does 'len()' function return?",
+    "a": "The last element of a sequence",
+    "b": "The length of a sequence",
+    "c": "The first element of a sequence",
+    "d": "The type of a sequence",
+    "answer": "b",
+    "correctExplanation": "Perfect! The len() function returns the number of items in a sequence (like lists, strings, tuples) or collection (like dictionaries, sets). It's a fundamental built-in function that works with most Python data structures to tell you how many elements they contain.",
+    "incorrectExplanation": "The correct answer is 'The length of a sequence'. len() counts the number of elements in a collection. For the last element, you'd use sequence[-1], for the first element sequence[0], and for the type you'd use type(). len() specifically returns the count of items."
+  },
+  {
+    "question": "Which operator is used for exponentiation in Python?",
+    "a": "^",
+    "b": "**",
+    "c": "pow",
+    "d": "exp",
+    "answer": "b",
+    "correctExplanation": "Excellent! The double asterisk (**) is Python's exponentiation operator. For example, 2**3 equals 8. While pow() is a function that can also do exponentiation, ** is the dedicated operator. It's Python's way of raising a number to a power.",
+    "incorrectExplanation": "The correct answer is '**'. In Python, double asterisks perform exponentiation (e.g., 2**3 = 8). The caret (^) is actually the XOR operator in Python, not exponentiation. While pow() is a function for powers and exp() exists in math module, ** is the standard exponentiation operator."
+  },
+  {
+    "question": "What is the correct way to create a dictionary in Python?",
+    "a": "dict = [key: value]",
+    "b": "dict = (key: value)",
+    "c": "dict = {key: value}",
+    "d": "dict = <key: value>",
+    "answer": "c",
+    "correctExplanation": "Perfect! Curly braces {} with key: value pairs create dictionaries in Python. Dictionaries are mutable, unordered collections that store data in key-value pairs, making them perfect for associative arrays and lookup tables.",
+    "incorrectExplanation": "The correct answer is curly braces {key: value}. Square brackets [] are for lists, parentheses () are for tuples, and angle brackets <> aren't valid Python syntax. Dictionaries use curly braces with colons separating keys and values."
+  },
+  {
+    "question": "Which keyword is used to create a loop that continues while a condition is true?",
+    "a": "for",
+    "b": "while",
+    "c": "loop",
+    "d": "repeat",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'while' keyword creates a loop that continues executing as long as the specified condition remains true. It's perfect for situations where you don't know exactly how many iterations you need.",
+    "incorrectExplanation": "The correct answer is 'while'. This keyword creates conditional loops. 'for' is used for iterating over sequences, while 'loop' and 'repeat' aren't Python keywords. The while loop checks a condition before each iteration."
+  },
+  {
+    "question": "What does the 'break' statement do in a loop?",
+    "a": "Pauses the loop temporarily",
+    "b": "Exits the loop completely",
+    "c": "Skips to the next iteration",
+    "d": "Restarts the loop from the beginning",
+    "answer": "b",
+    "correctExplanation": "Exactly right! The 'break' statement immediately exits the current loop completely. Once executed, the program continues with the first statement after the loop. It's useful when you need to terminate a loop based on a specific condition.",
+    "incorrectExplanation": "The correct answer is 'Exits the loop completely'. 'break' terminates the loop entirely. To skip to the next iteration, you'd use 'continue'. Python doesn't have built-in statements to pause or restart loops."
+  },
+  {
+    "question": "Which of these is the correct way to write a comment in Python?",
+    "a": "// This is a comment",
+    "b": "/* This is a comment */",
+    "c": "# This is a comment",
+    "d": "<!-- This is a comment -->",
+    "answer": "c",
+    "correctExplanation": "Perfect! The hash symbol (#) is used for single-line comments in Python. Everything after # on that line is ignored by the Python interpreter. For multi-line comments, you can use triple quotes or multiple # symbols.",
+    "incorrectExplanation": "The correct answer is '# This is a comment'. The // is used in languages like C++ and JavaScript, /* */ is for C-style languages, and <!-- --> is for HTML/XML. Python uses the hash symbol # for comments."
+  },
+  {
+    "question": "What is the result of '3' + '5' in Python?",
+    "a": "8",
+    "b": "35",
+    "c": "Error",
+    "d": "3.5",
+    "answer": "b",
+    "correctExplanation": "Correct! When you use the + operator with strings in Python, it concatenates them. '3' + '5' results in '35' as a string. The + operator performs string concatenation when both operands are strings.",
+    "incorrectExplanation": "The correct answer is '35'. Since both '3' and '5' are strings (in quotes), Python concatenates them rather than adding them mathematically. To get 8, you'd need integers: 3 + 5."
+  },
+  {
+    "question": "Which method is used to remove an item from a list by its value?",
+    "a": "delete()",
+    "b": "remove()",
+    "c": "pop()",
+    "d": "discard()",
+    "answer": "b",
+    "correctExplanation": "Excellent! The remove() method removes the first occurrence of a specific value from a list. If the value isn't found, it raises a ValueError. It's different from pop() which removes by index.",
+    "incorrectExplanation": "The correct answer is 'remove()'. This method removes the first occurrence of a specified value. 'pop()' removes by index, 'discard()' is for sets, and 'delete()' isn't a list method in Python."
+  },
+  {
+    "question": "What does the 'continue' statement do in a loop?",
+    "a": "Exits the loop completely",
+    "b": "Skips the rest of the current iteration",
+    "c": "Pauses the loop",
+    "d": "Repeats the current iteration",
+    "answer": "b",
+    "correctExplanation": "Perfect! The 'continue' statement skips the remaining code in the current iteration and jumps to the next iteration of the loop. It's useful when you want to skip certain values but continue looping.",
+    "incorrectExplanation": "The correct answer is 'Skips the rest of the current iteration'. 'continue' doesn't exit the loop (that's 'break'), pause it, or repeat the iteration. It simply moves to the next iteration immediately."
+  },
+  {
+    "question": "Which of these is a mutable data type in Python?",
+    "a": "String",
+    "b": "Tuple",
+    "c": "List",
+    "d": "Integer",
+    "answer": "c",
+    "correctExplanation": "Correct! Lists are mutable in Python, meaning you can change their contents after creation. You can add, remove, or modify elements. Strings, tuples, and integers are immutable.",
+    "incorrectExplanation": "The correct answer is 'List'. Lists can be modified after creation (mutable). Strings, tuples, and integers are immutable - once created, they cannot be changed. To 'modify' them, Python creates new objects."
+  },
+  {
+    "question": "What is the correct syntax for an if statement in Python?",
+    "a": "if (condition) { }",
+    "b": "if condition:",
+    "c": "if condition then",
+    "d": "if (condition) then:",
+    "answer": "b",
+    "correctExplanation": "Perfect! Python uses 'if condition:' followed by an indented block. Python doesn't use curly braces or 'then' keywords. The colon and indentation define the code block that executes when the condition is true.",
+    "incorrectExplanation": "The correct answer is 'if condition:'. Python uses colons and indentation, not curly braces like C/Java or 'then' keywords like some other languages. The indented code block after the colon executes when the condition is true."
+  },
+  {
+    "question": "Which function is used to get input from the user in Python?",
+    "a": "input()",
+    "b": "get()",
+    "c": "read()",
+    "d": "scanf()",
+    "answer": "a",
+    "correctExplanation": "Excellent! The input() function reads a line from the user and returns it as a string. It's the standard way to get user input in Python. You can provide a prompt message as an argument.",
+    "incorrectExplanation": "The correct answer is 'input()'. This is Python's built-in function for getting user input. 'get()' is a dictionary method, 'read()' is for files, and 'scanf()' is from C programming."
+  },
+  {
+    "question": "What is the correct way to import the math module in Python?",
+    "a": "#include math",
+    "b": "import math",
+    "c": "include math",
+    "d": "using math",
+    "answer": "b",
+    "correctExplanation": "Perfect! 'import math' is the correct way to import the math module in Python. This gives you access to mathematical functions like sqrt(), sin(), cos(), etc. You can then use them as math.function_name().",
+    "incorrectExplanation": "The correct answer is 'import math'. Python uses the 'import' keyword for modules. '#include' is from C/C++, 'include' and 'using' aren't Python keywords. After importing, use math.function_name() to access functions."
+  },
+  {
+    "question": "Which operator is used for floor division in Python?",
+    "a": "/",
+    "b": "//",
+    "c": "%",
+    "d": "div",
+    "answer": "b",
+    "correctExplanation": "Correct! The double slash (//) operator performs floor division, which returns the largest integer less than or equal to the division result. For example, 7 // 2 equals 3, not 3.5.",
+    "incorrectExplanation": "The correct answer is '//'. This performs floor division (integer division that rounds down). Single slash (/) does regular division, % is the modulus operator, and 'div' isn't a Python operator."
+  },
+  {
+    "question": "What does the 'pass' statement do in Python?",
+    "a": "Passes a value to a function",
+    "b": "Does nothing (null operation)",
+    "c": "Passes control to the next statement",
+    "d": "Exits the current function",
+    "answer": "b",
+    "correctExplanation": "Excellent! The 'pass' statement is a null operation - it does nothing when executed. It's used as a placeholder where syntactically some code is required, but no action needs to be taken.",
+    "incorrectExplanation": "The correct answer is 'Does nothing (null operation)'. 'pass' is a placeholder that does absolutely nothing. It's useful when you need syntactically correct code but don't want any operation to occur."
+  },
+  {
+    "question": "Which method converts a string to lowercase in Python?",
+    "a": "toLowerCase()",
+    "b": "lower()",
+    "c": "lowercase()",
+    "d": "toLower()",
+    "answer": "b",
+    "correctExplanation": "Perfect! The lower() method returns a copy of the string with all characters converted to lowercase. Since strings are immutable in Python, this returns a new string rather than modifying the original.",
+    "incorrectExplanation": "The correct answer is 'lower()'. This is Python's method for converting strings to lowercase. The other options follow naming conventions from other programming languages but aren't valid Python methods."
+  },
+  {
+    "question": "What is the result of bool([]) in Python?",
+    "a": "True",
+    "b": "False",
+    "c": "Error",
+    "d": "None",
+    "answer": "b",
+    "correctExplanation": "Correct! An empty list [] is considered 'falsy' in Python, so bool([]) returns False. Empty collections (lists, tuples, sets, dictionaries) all evaluate to False in boolean contexts.",
+    "incorrectExplanation": "The correct answer is 'False'. Empty containers like [], {}, (), and '' are all considered falsy in Python. Only non-empty collections evaluate to True in boolean contexts."
+  },
+  {
+    "question": "Which keyword is used to define a class in Python?",
+    "a": "class",
+    "b": "Class",
+    "c": "define",
+    "d": "object",
+    "answer": "a",
+    "correctExplanation": "Perfect! The 'class' keyword is used to define a class in Python. Classes are blueprints for creating objects and define attributes and methods that the objects will have.",
+    "incorrectExplanation": "The correct answer is 'class'. Python keywords are case-sensitive, so 'Class' wouldn't work. 'define' is used for functions (def), and 'object' is a built-in class that other classes can inherit from."
+  },
+  {
+    "question": "What does the modulus operator (%) return?",
+    "a": "The quotient of division",
+    "b": "The remainder of division",
+    "c": "The percentage",
+    "d": "The absolute value",
+    "answer": "b",
+    "correctExplanation": "Excellent! The modulus operator (%) returns the remainder after division. For example, 7 % 3 equals 1 because 7 divided by 3 is 2 with a remainder of 1.",
+    "incorrectExplanation": "The correct answer is 'The remainder of division'. The % operator gives you what's left over after division. For quotient, use // (floor division) or / (regular division). It's not related to percentages in this context."
+  },
+  {
+    "question": "Which of these is the correct way to create a tuple?",
+    "a": "tuple = [1, 2, 3]",
+    "b": "tuple = {1, 2, 3}",
+    "c": "tuple = (1, 2, 3)",
+    "d": "tuple = <1, 2, 3>",
+    "answer": "c",
+    "correctExplanation": "Perfect! Parentheses () are used to create tuples in Python. Tuples are ordered, immutable collections, making them useful for storing related data that shouldn't change.",
+    "incorrectExplanation": "The correct answer is (1, 2, 3). Parentheses create tuples, square brackets [] create lists, curly braces {} create sets or dictionaries, and angle brackets <> aren't valid Python syntax."
+  },
+  {
+    "question": "What does the 'return' statement do in a function?",
+    "a": "Prints a value",
+    "b": "Exits the function and optionally returns a value",
+    "c": "Loops back to the beginning",
+    "d": "Continues to the next line",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'return' statement exits a function and optionally sends a value back to the caller. If no value is specified, it returns None. Once return is executed, the function terminates immediately.",
+    "incorrectExplanation": "The correct answer is 'Exits the function and optionally returns a value'. 'return' terminates function execution and can send data back. It doesn't print (that's print()), loop, or continue execution."
+  },
+  {
+    "question": "Which method is used to convert a string to a list of characters?",
+    "a": "split()",
+    "b": "list()",
+    "c": "toList()",
+    "d": "chars()",
+    "answer": "b",
+    "correctExplanation": "Excellent! The list() function converts a string into a list of individual characters. For example, list('hello') returns ['h', 'e', 'l', 'l', 'o'].",
+    "incorrectExplanation": "The correct answer is 'list()'. This function converts the string into a list of characters. split() separates strings by delimiters, while 'toList()' and 'chars()' aren't Python methods."
+  },
+  {
+    "question": "What is the correct way to check if a key exists in a dictionary?",
+    "a": "key.in(dict)",
+    "b": "dict.hasKey(key)",
+    "c": "key in dict",
+    "d": "dict.contains(key)",
+    "answer": "c",
+    "correctExplanation": "Perfect! The 'in' operator is used to check if a key exists in a dictionary. For example, 'name' in my_dict returns True if 'name' is a key in the dictionary, False otherwise.",
+    "incorrectExplanation": "The correct answer is 'key in dict'. Python uses the 'in' operator for membership testing. The other options follow syntax from other programming languages but aren't valid in Python."
+  },
+  {
+    "question": "Which function is used to find the maximum value in a list?",
+    "a": "maximum()",
+    "b": "max()",
+    "c": "largest()",
+    "d": "top()",
+    "answer": "b",
+    "correctExplanation": "Correct! The max() function returns the largest item from a sequence or the largest of its arguments. It works with numbers, strings, and any comparable objects.",
+    "incorrectExplanation": "The correct answer is 'max()'. This built-in function finds the maximum value. The other options aren't Python functions. There's also min() for finding the minimum value."
+  },
+  {
+    "question": "What does 'len([1, 2, 3, [4, 5]])' return?",
+    "a": "5",
+    "b": "4",
+    "c": "3",
+    "d": "Error",
+    "answer": "b",
+    "correctExplanation": "Excellent! The len() function counts the top-level elements in a collection. This list has 4 elements: 1, 2, 3, and [4, 5]. The nested list counts as one element.",
+    "incorrectExplanation": "The correct answer is 4. len() counts top-level elements only. The list contains four items: three integers (1, 2, 3) and one nested list ([4, 5]). It doesn't count elements inside nested structures."
+  },
+  {
+    "question": "Which operator is used for string formatting in Python 3.6+?",
+    "a": "%",
+    "b": ".format()",
+    "c": "f''",
+    "d": "+",
+    "answer": "c",
+    "correctExplanation": "Perfect! F-strings (f'') are the modern way to format strings in Python 3.6+. They allow you to embed expressions directly in string literals, like f'Hello {name}!'.",
+    "incorrectExplanation": "The correct answer is f-strings (f''). While % and .format() also work for formatting, f-strings are the newest and most readable method introduced in Python 3.6. The + operator concatenates but doesn't format."
+  },
+  {
+    "question": "What is the result of 'print(type([]))' in Python?",
+    "a": "<class 'array'>",
+    "b": "<class 'list'>",
+    "c": "<class 'collection'>",
+    "d": "<class 'sequence'>",
+    "answer": "b",
+    "correctExplanation": "Correct! The type() function returns the type of an object. An empty list [] has the type <class 'list'>. This is how Python identifies the data type of objects.",
+    "incorrectExplanation": "The correct answer is <class 'list'>. The type() function returns the exact class of an object. [] creates a list object, so its type is 'list'. Arrays are a different data structure in Python."
+  },
+  {
+    "question": "Which method removes and returns the last item from a list?",
+    "a": "removeLast()",
+    "b": "pop()",
+    "c": "delete()",
+    "d": "removeLast()",
+    "answer": "b",
+    "correctExplanation": "Excellent! The pop() method removes and returns the last item from a list (or an item at a specified index). It's useful when you need both to remove an item and use its value.",
+    "incorrectExplanation": "The correct answer is 'pop()'. This method removes and returns the last element (or element at specified index). The other options aren't Python list methods."
+  },
+  {
+    "question": "What does the 'global' keyword do in Python?",
+    "a": "Creates a global variable",
+    "b": "Allows modification of a global variable inside a function",
+    "c": "Deletes a global variable",
+    "d": "Makes a variable accessible everywhere",
+    "answer": "b",
+    "correctExplanation": "Perfect! The 'global' keyword allows you to modify a global variable from within a function. Without it, assignment inside a function creates a local variable instead of modifying the global one.",
+    "incorrectExplanation": "The correct answer is 'Allows modification of a global variable inside a function'. The global keyword doesn't create or delete variables - it tells Python to use the global version when making assignments inside functions."
+  },
+  {
+    "question": "Which of these creates a set in Python?",
+    "a": "set = [1, 2, 3]",
+    "b": "set = (1, 2, 3)",
+    "c": "set = {1, 2, 3}",
+    "d": "set = <1, 2, 3>",
+    "answer": "c",
+    "correctExplanation": "Correct! Curly braces {1, 2, 3} create a set in Python. Sets are unordered collections of unique elements, automatically removing duplicates and providing fast membership testing.",
+    "incorrectExplanation": "The correct answer is {1, 2, 3}. Curly braces create sets (or dictionaries with key:value pairs). Square brackets [] make lists, parentheses () make tuples, and angle brackets aren't valid Python syntax."
+  },
+  {
+    "question": "What is the output of 'print(3 == 3.0)' in Python?",
+    "a": "False",
+    "b": "True",
+    "c": "Error",
+    "d": "None",
+    "answer": "b",
+    "correctExplanation": "Excellent! Python considers 3 (integer) and 3.0 (float) to be equal when using the == operator. The comparison is based on value, not type. Both represent the same mathematical value.",
+    "incorrectExplanation": "The correct answer is True. Python's == operator compares values, not types. Since 3 and 3.0 represent the same number, they're considered equal. To check types, you'd use 'is' or type() comparison."
+  },
+  {
+    "question": "Which method joins elements of a list into a string?",
+    "a": "join()",
+    "b": "concat()",
+    "c": "merge()",
+    "d": "combine()",
+    "answer": "a",
+    "correctExplanation": "Perfect! The join() method is called on a string and takes a list as an argument. For example, '-'.join(['a', 'b', 'c']) returns 'a-b-c'. The string serves as the separator.",
+    "incorrectExplanation": "The correct answer is 'join()'. This string method takes a list and joins elements with the string as separator. The other options aren't Python methods for this purpose."
+  },
+  {
+    "question": "What does 'range(5)' generate?",
+    "a": "Numbers 1 to 5",
+    "b": "Numbers 0 to 5",
+    "c": "Numbers 0 to 4",
+    "d": "Numbers 1 to 4",
+    "answer": "c",
+    "correctExplanation": "Correct! range(5) generates numbers from 0 to 4 (5 numbers total). Python's range function starts at 0 by default and stops before the specified number.",
+    "incorrectExplanation": "The correct answer is 'Numbers 0 to 4'. range(5) starts at 0 (default) and goes up to but not including 5. So it generates: 0, 1, 2, 3, 4."
+  },
+  {
+    "question": "Which is the correct way to handle exceptions in Python?",
+    "a": "catch-try",
+    "b": "try-except",
+    "c": "try-catch",
+    "d": "error-handle",
+    "answer": "b",
+    "correctExplanation": "Excellent! Python uses 'try-except' blocks for exception handling. Code that might raise an exception goes in the try block, and exception handling code goes in the except block.",
+    "incorrectExplanation": "The correct answer is 'try-except'. Python uses 'except' instead of 'catch' (which is used in languages like Java and C++). The try block contains risky code, except handles exceptions."
+  },
+  {
+    "question": "What is the result of 'bool(0)' in Python?",
+    "a": "True",
+    "b": "False",
+    "c": "0",
+    "d": "Error",
+    "answer": "b",
+    "correctExplanation": "Perfect! The number 0 is considered 'falsy' in Python, so bool(0) returns False. In Python, 0, empty strings, empty collections, and None are all falsy values.",
+    "incorrectExplanation": "The correct answer is False. Zero is one of the falsy values in Python. Other falsy values include empty strings (''), empty lists ([]), empty dictionaries ({}), and None."
+  },
+  {
+    "question": "Which keyword is used to create an alias when importing?",
+    "a": "alias",
+    "b": "as",
+    "c": "name",
+    "d": "rename",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'as' keyword creates an alias when importing. For example, 'import numpy as np' allows you to use 'np' instead of 'numpy' to access the module's functions.",
+    "incorrectExplanation": "The correct answer is 'as'. This keyword creates shorter or more convenient names for imported modules or functions. For example, 'import matplotlib.pyplot as plt' creates the alias 'plt'."
+  },
+  {
+    "question": "What does the 'is' operator check in Python?",
+    "a": "Value equality",
+    "b": "Type equality",
+    "c": "Object identity",
+    "d": "String similarity",
+    "answer": "c",
+    "correctExplanation": "Excellent! The 'is' operator checks if two variables refer to the same object in memory (identity), not just equal values. It's different from == which checks value equality.",
+    "incorrectExplanation": "The correct answer is 'Object identity'. The 'is' operator checks if two variables point to the same object in memory. For value comparison, use ==. For type checking, use isinstance() or type()."
+  },
+  {
+    "question": "Which method removes all items from a list?",
+    "a": "empty()",
+    "b": "clear()",
+    "c": "removeAll()",
+    "d": "delete()",
+    "answer": "b",
+    "correctExplanation": "Perfect! The clear() method removes all elements from a list, leaving it empty. After calling my_list.clear(), the list becomes [] but the list object itself still exists.",
+    "incorrectExplanation": "The correct answer is 'clear()'. This method empties the list completely. The other options aren't Python list methods. You could also use 'del my_list[:]' but clear() is more readable."
+  },
+  {
+    "question": "What is the correct syntax for a lambda function in Python?",
+    "a": "lambda x: x + 1",
+    "b": "lambda (x) => x + 1",
+    "c": "function(x) { return x + 1 }",
+    "d": "def lambda x: return x + 1",
+    "answer": "a",
+    "correctExplanation": "Correct! Lambda functions use the syntax 'lambda parameters: expression'. They're anonymous functions that can take arguments and return a single expression's result.",
+    "incorrectExplanation": "The correct answer is 'lambda x: x + 1'. Lambda functions use the keyword 'lambda', followed by parameters, a colon, and an expression. They don't use parentheses around parameters or curly braces."
+  },
+  {
+    "question": "Which function converts a number to a string in Python?",
+    "a": "toString()",
+    "b": "str()",
+    "c": "string()",
+    "d": "convert()",
+    "answer": "b",
+    "correctExplanation": "Excellent! The str() function converts various data types to strings. For example, str(42) returns '42'. It's the standard way to convert numbers, booleans, and other objects to string representation.",
+    "incorrectExplanation": "The correct answer is 'str()'. This built-in function converts objects to their string representation. The other options follow naming conventions from other languages but aren't Python functions."
+  },
+  {
+    "question": "What does 'enumerate()' function do in Python?",
+    "a": "Counts items in a list",
+    "b": "Returns index-value pairs for iteration",
+    "c": "Numbers the items in a list",
+    "d": "Creates a numbered list",
+    "answer": "b",
+    "correctExplanation": "Perfect! The enumerate() function returns index-value pairs when iterating over a sequence. It's commonly used in for loops when you need both the index and value: for i, value in enumerate(my_list).",
+    "incorrectExplanation": "The correct answer is 'Returns index-value pairs for iteration'. enumerate() gives you both the position (index) and the value of each item, making it easy to access both during iteration."
+  },
+  {
+    "question": "Which operator performs integer division in Python 2 but regular division in Python 3?",
+    "a": "//",
+    "b": "/",
+    "c": "%",
+    "d": "**",
+    "answer": "b",
+    "correctExplanation": "Correct! The single slash (/) operator behaved differently between Python versions. In Python 2, it performed integer division for integers, but in Python 3, it always performs true division (returns float).",
+    "incorrectExplanation": "The correct answer is '/'. This was a major change between Python 2 and 3. In Python 2, 5/2 gave 2 (integer), but in Python 3, it gives 2.5 (float). Use // for floor division in both versions."
+  },
+  {
+    "question": "What is the correct way to create an empty dictionary?",
+    "a": "dict = []",
+    "b": "dict = ()",
+    "c": "dict = {}",
+    "d": "dict = set()",
+    "answer": "c",
+    "correctExplanation": "Excellent! Empty curly braces {} create an empty dictionary in Python. You can also use dict() constructor, but {} is more common and concise for creating empty dictionaries.",
+    "incorrectExplanation": "The correct answer is {}. Empty curly braces create an empty dictionary. [] creates an empty list, () creates an empty tuple, and set() creates an empty set."
+  },
+  {
+    "question": "Which method checks if all characters in a string are digits?",
+    "a": "isdigit()",
+    "b": "isnum()",
+    "c": "isnumber()",
+    "d": "isint()",
+    "answer": "a",
+    "correctExplanation": "Perfect! The isdigit() method returns True if all characters in the string are digits (0-9), and there is at least one character. It's useful for validating numeric input.",
+    "incorrectExplanation": "The correct answer is 'isdigit()'. This string method checks if all characters are digits. The other options aren't Python string methods, though they might seem logical."
+  }
+]

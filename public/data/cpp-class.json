@@ -1,0 +1,452 @@
+[
+  {
+    "question": "Which header file is needed for input and output operations in C++?",
+    "a": "&lt;stdio.h&gt;",
+    "b": "&lt;iostream&gt;",
+    "c": "&lt;conio.h&gt;",
+    "d": "&lt;fstream&gt;",
+    "answer": "b",
+    "correctExplanation": "Excellent! &lt;iostream&gt; is the standard C++ header for input/output stream operations. It provides cout, cin, and cerr objects that are essential for modern C++ programming. Unlike &lt;stdio.h&gt; which is C-style I/O, &lt;iostream&gt; offers type-safe, object-oriented I/O operations.",
+    "incorrectExplanation": "The correct answer is &lt;iostream&gt;. While &lt;stdio.h&gt; works for C-style I/O, &lt;iostream&gt; is the modern C++ way. &lt;conio.h&gt; is non-standard and platform-specific, while &lt;fstream&gt; is specifically for file operations."
+  },
+  {
+    "question": "What is the correct syntax to declare a pointer in C++?",
+    "a": "int ptr*",
+    "b": "int *ptr",
+    "c": "ptr int*",
+    "d": "*int ptr",
+    "answer": "b",
+    "correctExplanation": "Perfect! The asterisk (*) goes before the variable name to declare a pointer. This tells the compiler that 'ptr' will store the memory address of an integer, not the integer value itself. Understanding pointer syntax is crucial for memory management in C++.",
+    "incorrectExplanation": "The correct answer is 'int *ptr'. The asterisk (*) must come before the variable name to declare it as a pointer. This syntax tells the compiler that ptr will hold the address of an integer, not the integer value."
+  },
+  {
+    "question": "Which operator is used to allocate memory dynamically in C++?",
+    "a": "malloc",
+    "b": "alloc",
+    "c": "new",
+    "d": "create",
+    "answer": "c",
+    "correctExplanation": "Correct! The 'new' operator is the C++ way to dynamically allocate memory. It not only allocates memory but also calls constructors for objects. Unlike malloc (which is C-style), 'new' is type-safe and integrates well with C++ object-oriented features.",
+    "incorrectExplanation": "The correct answer is 'new'. This is the modern C++ way to allocate memory dynamically. malloc() is from C and doesn't call constructors. 'alloc' and 'create' aren't standard C++ memory allocation operators."
+  },
+  {
+    "question": "What does 'cout' stand for in C++?",
+    "a": "Console Output",
+    "b": "Character Output",
+    "c": "C++ Output",
+    "d": "Computer Output",
+    "answer": "a",
+    "correctExplanation": "Exactly right! 'cout' stands for 'console output stream' and is an object of the ostream class. It's your primary tool for displaying output to the console in C++. Combined with the insertion operator (<<), it provides a clean, type-safe way to output data.",
+    "incorrectExplanation": "The correct answer is 'Console Output'. cout is the standard output stream object in C++, used with the << operator to send data to the console. It's part of the iostream library."
+  },
+  {
+    "question": "Which access specifier restricts access to within the same class only?",
+    "a": "public",
+    "b": "protected",
+    "c": "private",
+    "d": "internal",
+    "answer": "c",
+    "correctExplanation": "Perfect! 'private' members can only be accessed from within the same class. This is a fundamental principle of encapsulation in object-oriented programming, helping you control access to your class's internal data and maintain data integrity.",
+    "incorrectExplanation": "The correct answer is 'private'. Private members are only accessible within the same class. 'public' allows access from anywhere, 'protected' allows access from the class and its subclasses, and 'internal' isn't a C++ access specifier."
+  },
+  {
+    "question": "Which header file contains mathematical functions like sqrt(), sin(), cos()?",
+    "a": "&lt;math.h&gt;",
+    "b": "&lt;cmath&gt;",
+    "c": "&lt;mathematics&gt;",
+    "d": "&lt;numeric&gt;",
+    "answer": "b",
+    "correctExplanation": "Excellent! &lt;cmath&gt; is the standard C++ header for mathematical functions like sin(), cos(), sqrt(), pow(), etc. While &lt;math.h&gt; works, &lt;cmath&gt; is the proper C++ way, putting functions in the std namespace for better organization.",
+    "incorrectExplanation": "The correct answer is &lt;cmath&gt;. This is the C++ version of the math library. &lt;math.h&gt; is the C version that also works, but &lt;cmath&gt; is preferred in C++ as it uses the std namespace."
+  },
+  {
+    "question": "What is the correct syntax for declaring a vector of integers?",
+    "a": "vector&lt;int&gt; v",
+    "b": "vector(int) v",
+    "c": "vector[int] v",
+    "d": "int vector v",
+    "answer": "a",
+    "correctExplanation": "Perfect! Angle brackets &lt;&gt; are used for template parameters in C++. vector&lt;int&gt; tells the compiler you want a vector that stores integers. This template syntax allows vectors to be type-safe and work with any data type you specify.",
+    "incorrectExplanation": "The correct answer is 'vector&lt;int&gt; v'. C++ uses angle brackets for template parameters. Parentheses and square brackets won't work for template syntax, and you need to include &lt;vector&gt; header."
+  },
+  {
+    "question": "Which operator is used to access members of an object through a pointer?",
+    "a": ".",
+    "b": "->",
+    "c": "::",
+    "d": "&",
+    "answer": "b",
+    "correctExplanation": "Correct! The arrow operator (->) is used to access members of an object through a pointer. It's equivalent to (*ptr).member but more convenient. The dot operator (.) is used for direct object access.",
+    "incorrectExplanation": "The correct answer is '->'. This arrow operator accesses object members through pointers. The dot (.) is for direct objects, :: is for scope resolution, and & is the address-of operator."
+  },
+  {
+    "question": "What is the purpose of the 'const' keyword in C++?",
+    "a": "Makes variables changeable",
+    "b": "Makes variables constant (unchangeable)",
+    "c": "Creates temporary variables",
+    "d": "Defines global variables",
+    "answer": "b",
+    "correctExplanation": "Excellent! The 'const' keyword makes variables constant, meaning their values cannot be changed after initialization. It's a powerful feature for preventing accidental modifications and making code more reliable and self-documenting.",
+    "incorrectExplanation": "The correct answer is 'Makes variables constant (unchangeable)'. const prevents modification of variables after initialization, improving code safety and expressing intent clearly."
+  },
+  {
+    "question": "Which of these is the correct way to define a function in C++?",
+    "a": "function int add(int a, int b)",
+    "b": "int add(int a, int b)",
+    "c": "def add(int a, int b): int",
+    "d": "add(int a, int b) -> int",
+    "answer": "b",
+    "correctExplanation": "Perfect! C++ functions are defined with the return type first, followed by the function name and parameters in parentheses. This syntax clearly shows what the function returns and what parameters it accepts.",
+    "incorrectExplanation": "The correct answer is 'int add(int a, int b)'. C++ uses return-type function-name(parameters) syntax. The other options are from different programming languages or aren't valid syntax."
+  },
+  {
+    "question": "What does the 'delete' operator do in C++?",
+    "a": "Removes a variable from memory",
+    "b": "Deallocates memory allocated with 'new'",
+    "c": "Deletes a file",
+    "d": "Removes a function",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'delete' operator deallocates memory that was allocated with 'new'. It also calls the destructor for objects. Always pair 'new' with 'delete' to prevent memory leaks.",
+    "incorrectExplanation": "The correct answer is 'Deallocates memory allocated with new'. delete frees dynamically allocated memory and calls destructors. It's specifically for memory allocated with new, not for files or functions."
+  },
+  {
+    "question": "Which loop is guaranteed to execute at least once?",
+    "a": "for loop",
+    "b": "while loop",
+    "c": "do-while loop",
+    "d": "range-based for loop",
+    "answer": "c",
+    "correctExplanation": "Excellent! The do-while loop executes its body first, then checks the condition. This guarantees at least one execution, unlike for and while loops which check the condition before the first iteration.",
+    "incorrectExplanation": "The correct answer is 'do-while loop'. This loop executes the body first, then checks the condition, ensuring at least one execution. Other loops check conditions before executing."
+  },
+  {
+    "question": "What is the scope resolution operator in C++?",
+    "a": ".",
+    "b": "->",
+    "c": "::",
+    "d": "&",
+    "answer": "c",
+    "correctExplanation": "Perfect! The scope resolution operator (::) is used to access global variables, class static members, and members of namespaces. It helps resolve naming conflicts and specify exactly which variable or function you want to use.",
+    "incorrectExplanation": "The correct answer is '::'. This operator resolves scope conflicts and accesses global/namespace members. The dot (.) is for object members, -> is for pointer members, & is address-of."
+  },
+  {
+    "question": "Which keyword is used to inherit from a base class in C++?",
+    "a": "inherits",
+    "b": "extends",
+    "c": ":",
+    "d": "inherit",
+    "answer": "c",
+    "correctExplanation": "Correct! C++ uses the colon (:) for inheritance. The syntax is 'class Derived : public Base'. This creates an inheritance relationship where the derived class inherits members from the base class.",
+    "incorrectExplanation": "The correct answer is ':'. C++ uses colon syntax for inheritance. 'extends' is from Java, while 'inherits' and 'inherit' aren't C++ keywords."
+  },
+  {
+    "question": "What is the difference between '++i' and 'i++'?",
+    "a": "No difference",
+    "b": "++i increments before use, i++ increments after use",
+    "c": "++i is faster than i++",
+    "d": "i++ is only for integers",
+    "answer": "b",
+    "correctExplanation": "Excellent! ++i (pre-increment) increments the value first, then returns it. i++ (post-increment) returns the current value, then increments it. This difference matters when the result is used in expressions.",
+    "incorrectExplanation": "The correct answer is '++i increments before use, i++ increments after use'. Pre-increment changes the value first, post-increment uses the current value then changes it."
+  },
+  {
+    "question": "Which of these is a valid comment syntax in C++?",
+    "a": "# This is a comment",
+    "b": "// This is a comment",
+    "c": "/* This is a comment",
+    "d": "-- This is a comment",
+    "answer": "b",
+    "correctExplanation": "Perfect! C++ supports two comment styles: // for single-line comments and /* */ for multi-line comments. The // syntax is commonly used for single-line comments.",
+    "incorrectExplanation": "The correct answer is '// This is a comment'. C++ uses // for single-line and /* */ for multi-line comments. # is for preprocessor directives, -- is from SQL."
+  },
+  {
+    "question": "What does the 'virtual' keyword do in C++?",
+    "a": "Creates virtual memory",
+    "b": "Enables polymorphism through virtual functions",
+    "c": "Makes functions faster",
+    "d": "Creates temporary objects",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'virtual' keyword enables polymorphism by allowing derived classes to override base class methods. Virtual functions are resolved at runtime based on the actual object type, not the pointer type.",
+    "incorrectExplanation": "The correct answer is 'Enables polymorphism through virtual functions'. Virtual functions allow runtime polymorphism, where the correct function is called based on the object's actual type."
+  },
+  {
+    "question": "Which operator is used to get the address of a variable?",
+    "a": "*",
+    "b": "&",
+    "c": "->",
+    "d": "::",
+    "answer": "b",
+    "correctExplanation": "Excellent! The ampersand (&) is the address-of operator. It returns the memory address where a variable is stored. This is essential for working with pointers and references in C++.",
+    "incorrectExplanation": "The correct answer is '&'. This operator gets the address of a variable. * is for dereferencing pointers, -> is for pointer member access, :: is for scope resolution."
+  },
+  {
+    "question": "What is a constructor in C++?",
+    "a": "A function that destroys objects",
+    "b": "A special function that initializes objects",
+    "c": "A function that copies objects",
+    "d": "A function that compares objects",
+    "answer": "b",
+    "correctExplanation": "Perfect! A constructor is a special member function that's automatically called when an object is created. It has the same name as the class and is used to initialize the object's data members.",
+    "incorrectExplanation": "The correct answer is 'A special function that initializes objects'. Constructors set up objects when they're created. Destructors destroy objects, copy constructors copy objects."
+  },
+  {
+    "question": "Which header file is needed to use string class in C++?",
+    "a": "&lt;cstring&gt;",
+    "b": "&lt;string&gt;",
+    "c": "&lt;str&gt;",
+    "d": "&lt;text&gt;",
+    "answer": "b",
+    "correctExplanation": "Correct! The &lt;string&gt; header provides the std::string class, which is the modern C++ way to handle strings. It offers many convenient methods and automatic memory management.",
+    "incorrectExplanation": "The correct answer is &lt;string&gt;. This header provides the string class. &lt;cstring&gt; is for C-style string functions like strlen(), strcpy()."
+  },
+  {
+    "question": "What is the default access level for class members in C++?",
+    "a": "public",
+    "b": "protected",
+    "c": "private",
+    "d": "internal",
+    "answer": "c",
+    "correctExplanation": "Excellent! Class members are private by default in C++. This means they can only be accessed from within the same class unless explicitly specified otherwise with public or protected.",
+    "incorrectExplanation": "The correct answer is 'private'. C++ classes default to private access, promoting encapsulation. Structs default to public access. This encourages good object-oriented design practices."
+  },
+  {
+    "question": "Which of these is used to handle exceptions in C++?",
+    "a": "try-catch",
+    "b": "try-except",
+    "c": "error-handle",
+    "d": "exception-catch",
+    "answer": "a",
+    "correctExplanation": "Perfect! C++ uses try-catch blocks for exception handling. Code that might throw an exception goes in the try block, and exception handling goes in catch blocks. You can have multiple catch blocks for different exception types.",
+    "incorrectExplanation": "The correct answer is 'try-catch'. C++ uses this syntax for exception handling. 'try-except' is Python syntax, while the other options aren't standard exception handling constructs."
+  },
+  {
+    "question": "What does 'endl' do in C++?",
+    "a": "Ends the program",
+    "b": "Inserts a newline and flushes the stream",
+    "c": "Creates a new line only",
+    "d": "Ends a loop",
+    "answer": "b",
+    "correctExplanation": "Correct! 'endl' inserts a newline character and flushes the output stream, ensuring the output is immediately displayed. For just a newline without flushing, you can use '\\n'.",
+    "incorrectExplanation": "The correct answer is 'Inserts a newline and flushes the stream'. endl does more than just create a newline - it also flushes the buffer, which can impact performance in loops."
+  },
+  {
+    "question": "Which keyword is used to create a reference in C++?",
+    "a": "*",
+    "b": "&",
+    "c": "ref",
+    "d": "->",
+    "answer": "b",
+    "correctExplanation": "Excellent! The ampersand (&) is used to declare references in C++. A reference is an alias for another variable - it's essentially another name for the same memory location.",
+    "incorrectExplanation": "The correct answer is '&'. This symbol declares references when used in declarations. * is for pointers, 'ref' isn't a C++ keyword, -> is for pointer member access."
+  },
+  {
+    "question": "What is function overloading in C++?",
+    "a": "Having multiple functions with the same name but different parameters",
+    "b": "Having functions that call themselves",
+    "c": "Having functions with multiple return types",
+    "d": "Having functions in multiple files",
+    "answer": "a",
+    "correctExplanation": "Perfect! Function overloading allows multiple functions to share the same name as long as they have different parameter lists (different number or types of parameters). The compiler determines which function to call based on the arguments.",
+    "incorrectExplanation": "The correct answer is 'Having multiple functions with the same name but different parameters'. Overloading is resolved at compile time based on the function signature."
+  },
+  {
+    "question": "Which loop is best for iterating when you know the exact number of iterations?",
+    "a": "while loop",
+    "b": "do-while loop",
+    "c": "for loop",
+    "d": "goto loop",
+    "answer": "c",
+    "correctExplanation": "Correct! The for loop is ideal when you know the number of iterations in advance. Its syntax clearly shows the initialization, condition, and increment in one place, making it perfect for counting loops.",
+    "incorrectExplanation": "The correct answer is 'for loop'. For loops are designed for counting and are most readable when the iteration count is known. 'goto loop' isn't a standard loop construct."
+  },
+  {
+    "question": "What is the purpose of the 'static' keyword in C++?",
+    "a": "Makes variables unchangeable",
+    "b": "Gives variables class scope rather than instance scope",
+    "c": "Makes variables global",
+    "d": "Makes variables temporary",
+    "answer": "b",
+    "correctExplanation": "Excellent! The 'static' keyword in classes makes members belong to the class itself rather than to individual instances. Static members are shared among all objects of the class.",
+    "incorrectExplanation": "The correct answer is 'Gives variables class scope rather than instance scope'. Static members belong to the class, not individual objects. They're shared among all instances."
+  },
+  {
+    "question": "Which operator is used for bitwise AND in C++?",
+    "a": "&&",
+    "b": "&",
+    "c": "AND",
+    "d": "*",
+    "answer": "b",
+    "correctExplanation": "Perfect! The single ampersand (&) is the bitwise AND operator. It performs AND operation on each pair of corresponding bits. Don't confuse it with && which is logical AND.",
+    "incorrectExplanation": "The correct answer is '&'. This is bitwise AND that operates on individual bits. && is logical AND for boolean expressions, 'AND' isn't an operator, * is multiplication."
+  },
+  {
+    "question": "What does the 'break' statement do in a loop?",
+    "a": "Pauses the loop temporarily",
+    "b": "Skips to the next iteration",
+    "c": "Exits the loop completely",
+    "d": "Restarts the loop",
+    "answer": "c",
+    "correctExplanation": "Correct! The 'break' statement immediately exits the current loop and continues execution with the statement after the loop. It's useful for early termination based on certain conditions.",
+    "incorrectExplanation": "The correct answer is 'Exits the loop completely'. break terminates the loop entirely. To skip to the next iteration, use 'continue'. C++ doesn't have built-in pause or restart statements."
+  },
+  {
+    "question": "Which of these is a valid way to declare an array in C++?",
+    "a": "int arr[10]",
+    "b": "array&lt;int, 10&gt; arr",
+    "c": "vector&lt;int&gt; arr(10)",
+    "d": "All of the above",
+    "answer": "d",
+    "correctExplanation": "Excellent! C++ offers multiple ways to create arrays: traditional C-style arrays (int arr[10]), std::array for fixed-size arrays, and std::vector for dynamic arrays. Each has its use cases.",
+    "incorrectExplanation": "The correct answer is 'All of the above'. C++ supports multiple array types: C-style arrays, std::array (from &lt;array&gt;), and std::vector (from &lt;vector&gt;) for different needs."
+  },
+  {
+    "question": "What is the difference between 'struct' and 'class' in C++?",
+    "a": "No difference except default access level",
+    "b": "struct is for data, class is for objects",
+    "c": "struct can't have functions",
+    "d": "class is faster than struct",
+    "answer": "a",
+    "correctExplanation": "Perfect! In C++, struct and class are almost identical. The only difference is that struct members are public by default, while class members are private by default. Both can have constructors, methods, and inheritance.",
+    "incorrectExplanation": "The correct answer is 'No difference except default access level'. Both struct and class can have methods, constructors, inheritance, etc. Struct defaults to public, class to private access."
+  },
+  {
+    "question": "Which header file is needed for file operations in C++?",
+    "a": "&lt;iostream&gt;",
+    "b": "&lt;fstream&gt;",
+    "c": "&lt;file&gt;",
+    "d": "&lt;fileio&gt;",
+    "answer": "b",
+    "correctExplanation": "Correct! The &lt;fstream&gt; header provides classes like ifstream (input file stream), ofstream (output file stream), and fstream (bidirectional file stream) for file operations.",
+    "incorrectExplanation": "The correct answer is &lt;fstream&gt;. This header provides file stream classes for reading and writing files. &lt;iostream&gt; is for console I/O, while &lt;file&gt; and &lt;fileio&gt; don't exist."
+  },
+  {
+    "question": "What is a destructor in C++?",
+    "a": "A function that creates objects",
+    "b": "A function that's called when an object is destroyed",
+    "c": "A function that copies objects",
+    "d": "A function that compares objects",
+    "answer": "b",
+    "correctExplanation": "Excellent! A destructor is a special member function that's automatically called when an object goes out of scope or is explicitly deleted. It's used for cleanup like releasing memory or closing files.",
+    "incorrectExplanation": "The correct answer is 'A function that's called when an object is destroyed'. Destructors clean up resources when objects are destroyed. They have the same name as the class with a ~ prefix."
+  },
+  {
+    "question": "Which operator has the highest precedence in C++?",
+    "a": "+",
+    "b": "*",
+    "c": "()",
+    "d": "=",
+    "answer": "c",
+    "correctExplanation": "Perfect! Parentheses () have the highest precedence in C++. They can override the natural order of operations and make expressions more readable by explicitly grouping operations.",
+    "incorrectExplanation": "The correct answer is '()'. Parentheses have the highest precedence and can override natural operator precedence. Multiplication (*) has higher precedence than addition (+) and assignment (=)."
+  },
+  {
+    "question": "What does the 'continue' statement do in a loop?",
+    "a": "Exits the loop",
+    "b": "Skips the rest of the current iteration and goes to the next",
+    "c": "Pauses the loop",
+    "d": "Restarts the loop from the beginning",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'continue' statement skips the remaining code in the current iteration and jumps to the next iteration of the loop. It's useful for skipping certain values while continuing the loop.",
+    "incorrectExplanation": "The correct answer is 'Skips the rest of the current iteration and goes to the next'. continue doesn't exit the loop (that's break) or restart it - it just moves to the next iteration."
+  },
+  {
+    "question": "Which of these is used to include standard library functions?",
+    "a": "#include &lt;header&gt;",
+    "b": "import header",
+    "c": "using header",
+    "d": "require header",
+    "answer": "a",
+    "correctExplanation": "Excellent! The #include directive is used to include header files containing function declarations and definitions. Angle brackets &lt;&gt; are used for standard library headers, quotes \"\" for user-defined headers.",
+    "incorrectExplanation": "The correct answer is '#include &lt;header&gt;'. This preprocessor directive includes header files. 'import', 'using', and 'require' are from other languages or serve different purposes in C++."
+  },
+  {
+    "question": "What is the size of a 'char' data type in C++?",
+    "a": "1 byte",
+    "b": "2 bytes",
+    "c": "4 bytes",
+    "d": "Platform dependent",
+    "answer": "a",
+    "correctExplanation": "Perfect! A char is always 1 byte (8 bits) in C++. This is guaranteed by the C++ standard and provides a reliable unit for measuring other data types and memory allocation.",
+    "incorrectExplanation": "The correct answer is '1 byte'. char is always 1 byte in C++, which serves as the fundamental unit for measuring other data types. Other types may vary by platform, but char is fixed."
+  },
+  {
+    "question": "Which of these correctly declares a constant pointer?",
+    "a": "const int* ptr",
+    "b": "int* const ptr",
+    "c": "const int* const ptr",
+    "d": "int const* ptr",
+    "answer": "b",
+    "correctExplanation": "Correct! 'int* const ptr' declares a constant pointer - the pointer itself cannot be changed to point to a different location, but the value it points to can be modified. The 'const' after the * applies to the pointer.",
+    "incorrectExplanation": "The correct answer is 'int* const ptr'. This makes the pointer constant (can't point elsewhere). 'const int* ptr' makes the pointed-to value constant, 'const int* const ptr' makes both constant."
+  },
+  {
+    "question": "What is operator overloading in C++?",
+    "a": "Using too many operators",
+    "b": "Defining custom behavior for operators with user-defined types",
+    "c": "Having multiple operators in one expression",
+    "d": "Using operators incorrectly",
+    "answer": "b",
+    "correctExplanation": "Excellent! Operator overloading allows you to define how operators work with your custom classes. For example, you can define what + means when used with objects of your class, making the code more intuitive.",
+    "incorrectExplanation": "The correct answer is 'Defining custom behavior for operators with user-defined types'. Operator overloading lets you specify how operators like +, -, *, etc. work with your custom classes."
+  },
+  {
+    "question": "Which keyword is used to define a template in C++?",
+    "a": "generic",
+    "b": "template",
+    "c": "type",
+    "d": "class",
+    "answer": "b",
+    "correctExplanation": "Perfect! The 'template' keyword is used to define generic functions and classes in C++. Templates allow you to write code that works with multiple data types without rewriting the same logic.",
+    "incorrectExplanation": "The correct answer is 'template'. This keyword enables generic programming in C++. 'generic' is from other languages, 'type' and 'class' are used within template syntax but don't define templates."
+  },
+  {
+    "question": "What does 'cin' stand for in C++?",
+    "a": "Console Input",
+    "b": "Character Input",
+    "c": "C++ Input",
+    "d": "Computer Input",
+    "answer": "a",
+    "correctExplanation": "Correct! 'cin' stands for 'console input stream' and is used to read input from the keyboard. It's the counterpart to cout and uses the extraction operator (>>) to read data into variables.",
+    "incorrectExplanation": "The correct answer is 'Console Input'. cin is the standard input stream object in C++, used with the >> operator to read data from the console into variables."
+  },
+  {
+    "question": "Which of these creates a multi-line comment in C++?",
+    "a": "// comment //",
+    "b": "/* comment */",
+    "c": "# comment #",
+    "d": "-- comment --",
+    "answer": "b",
+    "correctExplanation": "Excellent! /* comment */ creates multi-line comments in C++. Everything between /* and */ is ignored by the compiler, allowing comments to span multiple lines. Single-line comments use //.",
+    "incorrectExplanation": "The correct answer is '/* comment */'. This creates multi-line comments that can span several lines. // is for single-line comments, # is for preprocessor directives, -- is from SQL."
+  },
+  {
+    "question": "What is the return type of the main() function in C++?",
+    "a": "void",
+    "b": "int",
+    "c": "char",
+    "d": "string",
+    "answer": "b",
+    "correctExplanation": "Perfect! The main() function returns an int in C++. This return value indicates the program's exit status to the operating system - 0 typically means success, non-zero indicates an error condition.",
+    "incorrectExplanation": "The correct answer is 'int'. main() returns an integer exit code to the operating system. 0 usually indicates successful execution, while non-zero values indicate errors."
+  },
+  {
+    "question": "Which header file is needed to use mathematical constants like M_PI?",
+    "a": "&lt;cmath&gt;",
+    "b": "&lt;math.h&gt;",
+    "c": "&lt;constants&gt;",
+    "d": "Both a and b",
+    "answer": "d",
+    "correctExplanation": "Correct! Both &lt;cmath&gt; and &lt;math.h&gt; can provide mathematical constants like M_PI, though availability depends on the compiler and may require defining _USE_MATH_DEFINES. &lt;cmath&gt; is the preferred C++ header.",
+    "incorrectExplanation": "The correct answer is 'Both a and b'. Mathematical constants like M_PI are available in both headers, though &lt;cmath&gt; is preferred for C++. Some compilers require special defines for these constants."
+  },
+  {
+    "question": "What is the difference between 'pass by value' and 'pass by reference'?",
+    "a": "No difference",
+    "b": "Pass by value copies the argument, pass by reference uses the original",
+    "c": "Pass by reference is slower",
+    "d": "Pass by value is only for integers",
+    "answer": "b",
+    "correctExplanation": "Excellent! Pass by value creates a copy of the argument, so changes inside the function don't affect the original. Pass by reference uses the original variable, so changes inside the function modify the original.",
+    "incorrectExplanation": "The correct answer is 'Pass by value copies the argument, pass by reference uses the original'. This fundamental difference affects whether functions can modify the original variables."
+  }
+]

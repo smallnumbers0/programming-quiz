@@ -1,0 +1,462 @@
+[
+  {
+    "question": "Which keyword is used to define a class in Java?",
+    "a": "Class",
+    "b": "class",
+    "c": "define",
+    "d": "object",
+    "answer": "b",
+    "correctExplanation": "Perfect! The 'class' keyword is fundamental in Java for defining classes. Every Java program consists of at least one class, and this keyword tells the compiler you're creating a new class definition. It's the foundation of object-oriented programming in Java.",
+    "incorrectExplanation": "The correct answer is 'class' (lowercase). Java is case-sensitive, so 'Class' (uppercase) won't work for defining classes. 'define' is not a Java keyword, and 'object' refers to the base class that all Java classes inherit from."
+  },
+  {
+    "question": "What is the entry point of a Java application?",
+    "a": "start() method",
+    "b": "main() method",
+    "c": "run() method",
+    "d": "init() method",
+    "answer": "b",
+    "correctExplanation": "Exactly right! The main() method with signature 'public static void main(String[] args)' is where every Java application begins execution. The JVM looks specifically for this method to start your program - it's your program's starting point.",
+    "incorrectExplanation": "The correct answer is 'main() method'. This is the entry point for Java applications. start() is used in threading, run() is for Runnable interface, and init() is for applets. The JVM specifically looks for the main method to begin execution."
+  },
+  {
+    "question": "Which of these is NOT a primitive data type in Java?",
+    "a": "int",
+    "b": "String",
+    "c": "boolean",
+    "d": "double",
+    "answer": "b",
+    "correctExplanation": "Correct! String is a class (reference type), not a primitive data type. While it's used frequently and has special language support, it's actually an object. The primitive types are byte, short, int, long, float, double, boolean, and char.",
+    "incorrectExplanation": "The correct answer is 'String'. String is a reference type (class), not primitive. The eight primitive types in Java are: byte, short, int, long, float, double, boolean, and char. String is an object with methods and properties."
+  },
+  {
+    "question": "What does JVM stand for?",
+    "a": "Java Virtual Machine",
+    "b": "Java Variable Method",
+    "c": "Java Visual Manager",
+    "d": "Java Version Manager",
+    "answer": "a",
+    "correctExplanation": "Perfect! JVM stands for Java Virtual Machine - the runtime environment that executes Java bytecode. It's what makes Java platform-independent, allowing your code to run on any system with a JVM installed. It handles memory management, garbage collection, and bytecode interpretation.",
+    "incorrectExplanation": "The correct answer is 'Java Virtual Machine'. The JVM is crucial to Java's 'write once, run anywhere' philosophy. It converts bytecode into platform-specific machine code and manages memory allocation and garbage collection."
+  },
+  {
+    "question": "Which access modifier provides the widest accessibility?",
+    "a": "private",
+    "b": "protected",
+    "c": "public",
+    "d": "default",
+    "answer": "c",
+    "correctExplanation": "Excellent! 'public' provides the widest access - members are accessible from anywhere in the program, regardless of package or inheritance. It's the most permissive access level, making the member visible to all other classes.",
+    "incorrectExplanation": "The correct answer is 'public'. This access modifier allows access from anywhere. 'private' restricts to the same class, 'protected' allows subclasses and same package, and 'default' (no modifier) allows same package only."
+  },
+  {
+    "question": "What is the correct way to declare an array in Java?",
+    "a": "int array[] = new int[5]",
+    "b": "int[] array = new int[5]",
+    "c": "Both a and b",
+    "d": "int array = new int[5]",
+    "answer": "c",
+    "correctExplanation": "Correct! Both syntaxes are valid in Java. You can write either 'int[] array' or 'int array[]'. The first form is preferred as it clearly shows that the variable is an array type, but both are syntactically correct.",
+    "incorrectExplanation": "The correct answer is 'Both a and b'. Java accepts both array declaration syntaxes. However, 'int[] array' is generally preferred because it makes the array type more obvious when reading the code."
+  },
+  {
+    "question": "Which keyword is used to inherit from a class in Java?",
+    "a": "inherits",
+    "b": "extends",
+    "c": "implements",
+    "d": "inherit",
+    "answer": "b",
+    "correctExplanation": "Perfect! The 'extends' keyword is used for class inheritance in Java. When a class extends another class, it inherits all non-private members from the parent class. This is fundamental to object-oriented programming.",
+    "incorrectExplanation": "The correct answer is 'extends'. This keyword creates an inheritance relationship between classes. 'implements' is used for interfaces, while 'inherits' and 'inherit' are not Java keywords."
+  },
+  {
+    "question": "What is the default value of an int variable in Java?",
+    "a": "null",
+    "b": "0",
+    "c": "1",
+    "d": "undefined",
+    "answer": "b",
+    "correctExplanation": "Excellent! The default value of an int variable is 0. Java automatically initializes primitive numeric types to zero. This applies to instance variables and static variables, but local variables must be explicitly initialized.",
+    "incorrectExplanation": "The correct answer is 0. Java initializes numeric primitives to zero by default. 'null' is for reference types, and Java doesn't have 'undefined' like JavaScript. Local variables aren't automatically initialized though."
+  },
+  {
+    "question": "Which of these is used to handle exceptions in Java?",
+    "a": "try-catch",
+    "b": "try-except",
+    "c": "error-handle",
+    "d": "exception-catch",
+    "answer": "a",
+    "correctExplanation": "Correct! Java uses 'try-catch' blocks for exception handling. Code that might throw an exception goes in the try block, and exception handling code goes in the catch block. You can also use finally for cleanup code.",
+    "incorrectExplanation": "The correct answer is 'try-catch'. Java uses 'catch' for exception handling, unlike Python which uses 'except'. The try block contains risky code, catch handles specific exceptions."
+  },
+  {
+    "question": "What does the 'static' keyword mean in Java?",
+    "a": "The member belongs to the class, not instances",
+    "b": "The member cannot be changed",
+    "c": "The member is private",
+    "d": "The member is final",
+    "answer": "a",
+    "correctExplanation": "Perfect! The 'static' keyword means the member belongs to the class itself rather than to any instance of the class. Static members can be accessed using the class name without creating an object.",
+    "incorrectExplanation": "The correct answer is 'The member belongs to the class, not instances'. Static members are shared among all instances. 'final' makes members unchangeable, access modifiers control visibility, not 'static'."
+  },
+  {
+    "question": "Which method is called when an object is created in Java?",
+    "a": "init()",
+    "b": "constructor",
+    "c": "create()",
+    "d": "new()",
+    "answer": "b",
+    "correctExplanation": "Excellent! The constructor is called when an object is created. Constructors have the same name as the class and don't have a return type. They initialize the object's state when 'new' is used.",
+    "incorrectExplanation": "The correct answer is 'constructor'. Constructors are special methods that initialize objects. They're automatically called when you use 'new'. The other options aren't standard Java object creation methods."
+  },
+  {
+    "question": "What is the correct syntax for a for loop in Java?",
+    "a": "for (int i = 0; i < 10; i++)",
+    "b": "for int i = 0; i < 10; i++",
+    "c": "for (i = 0; i < 10; i++) int",
+    "d": "for i in range(10)",
+    "answer": "a",
+    "correctExplanation": "Correct! Java for loops use the syntax: for (initialization; condition; increment). All three parts are separated by semicolons and enclosed in parentheses. This is the classic C-style for loop syntax.",
+    "incorrectExplanation": "The correct answer is 'for (int i = 0; i < 10; i++)'. Java requires parentheses around the three parts separated by semicolons. The last option is Python syntax, not Java."
+  },
+  {
+    "question": "Which keyword is used to implement an interface in Java?",
+    "a": "extends",
+    "b": "implements",
+    "c": "interface",
+    "d": "inherit",
+    "answer": "b",
+    "correctExplanation": "Perfect! The 'implements' keyword is used when a class wants to implement an interface. A class can implement multiple interfaces, providing concrete implementations for all abstract methods.",
+    "incorrectExplanation": "The correct answer is 'implements'. This keyword is specifically for interfaces. 'extends' is for class inheritance, 'interface' declares an interface, and 'inherit' isn't a Java keyword."
+  },
+  {
+    "question": "What is the difference between '==' and '.equals()' in Java?",
+    "a": "No difference",
+    "b": "== compares references, .equals() compares content",
+    "c": "== compares content, .equals() compares references",
+    "d": ".equals() is faster than ==",
+    "answer": "b",
+    "correctExplanation": "Excellent! The == operator compares object references (memory addresses), while .equals() method compares the actual content of objects. For strings and other objects, use .equals() to compare values.",
+    "incorrectExplanation": "The correct answer is '== compares references, .equals() compares content'. This is a crucial distinction in Java. Using == for strings might seem to work but can cause bugs due to string interning."
+  },
+  {
+    "question": "Which of these is the correct way to declare a constant in Java?",
+    "a": "const int VALUE = 10",
+    "b": "final int VALUE = 10",
+    "c": "static int VALUE = 10",
+    "d": "readonly int VALUE = 10",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'final' keyword is used to declare constants in Java. Once assigned, a final variable cannot be reassigned. For class-level constants, you typically use 'public static final'.",
+    "incorrectExplanation": "The correct answer is 'final int VALUE = 10'. Java uses 'final' for constants, not 'const' (which exists in other languages). 'static' makes it class-level, 'readonly' is from C#."
+  },
+  {
+    "question": "What does the 'super' keyword do in Java?",
+    "a": "Calls the parent class constructor or method",
+    "b": "Creates a new object",
+    "c": "Makes a method static",
+    "d": "Handles exceptions",
+    "answer": "a",
+    "correctExplanation": "Perfect! The 'super' keyword refers to the immediate parent class. It can be used to call parent class constructors (super()) or access parent class methods and variables when they're overridden.",
+    "incorrectExplanation": "The correct answer is 'Calls the parent class constructor or method'. Super provides access to the parent class members. It's essential for inheritance and method overriding scenarios."
+  },
+  {
+    "question": "Which collection allows duplicate elements in Java?",
+    "a": "Set",
+    "b": "List",
+    "c": "Map",
+    "d": "Queue",
+    "answer": "b",
+    "correctExplanation": "Excellent! List collections (like ArrayList, LinkedList) allow duplicate elements. Lists maintain insertion order and can contain the same element multiple times at different positions.",
+    "incorrectExplanation": "The correct answer is 'List'. Lists allow duplicates and maintain order. Sets don't allow duplicates, Maps store key-value pairs (keys must be unique), and Queues can have duplicates but serve a different purpose."
+  },
+  {
+    "question": "What is method overloading in Java?",
+    "a": "Same method name, different parameters",
+    "b": "Same method name, same parameters",
+    "c": "Different method name, same parameters",
+    "d": "Methods in different classes",
+    "answer": "a",
+    "correctExplanation": "Correct! Method overloading means having multiple methods with the same name but different parameter lists (different number or types of parameters). The compiler determines which method to call based on the arguments.",
+    "incorrectExplanation": "The correct answer is 'Same method name, different parameters'. This allows one method name to handle different types or numbers of inputs. It's resolved at compile time based on the method signature."
+  },
+  {
+    "question": "Which keyword prevents a class from being inherited in Java?",
+    "a": "private",
+    "b": "static",
+    "c": "final",
+    "d": "sealed",
+    "answer": "c",
+    "correctExplanation": "Perfect! The 'final' keyword when applied to a class prevents it from being extended (inherited). Examples include String, Integer, and other wrapper classes that are declared as final.",
+    "incorrectExplanation": "The correct answer is 'final'. When a class is declared final, no other class can extend it. 'private' is for access control, 'static' is for class-level members, 'sealed' is from newer Java versions."
+  },
+  {
+    "question": "What is the purpose of the 'this' keyword in Java?",
+    "a": "Refers to the current object",
+    "b": "Refers to the parent class",
+    "c": "Creates a new object",
+    "d": "Refers to static members",
+    "answer": "a",
+    "correctExplanation": "Excellent! The 'this' keyword refers to the current instance of the class. It's used to distinguish between instance variables and parameters with the same name, or to call other constructors in the same class.",
+    "incorrectExplanation": "The correct answer is 'Refers to the current object'. 'this' points to the current instance, helping resolve naming conflicts and enabling constructor chaining. 'super' refers to the parent class."
+  },
+  {
+    "question": "Which loop executes at least once in Java?",
+    "a": "for loop",
+    "b": "while loop",
+    "c": "do-while loop",
+    "d": "enhanced for loop",
+    "answer": "c",
+    "correctExplanation": "Correct! The do-while loop checks its condition after executing the loop body, guaranteeing at least one execution. The syntax is: do { statements } while (condition);",
+    "incorrectExplanation": "The correct answer is 'do-while loop'. This loop executes the body first, then checks the condition. All other loops check the condition before executing, so they might not execute at all."
+  },
+  {
+    "question": "What is the default access modifier in Java?",
+    "a": "public",
+    "b": "private",
+    "c": "protected",
+    "d": "package-private (default)",
+    "answer": "d",
+    "correctExplanation": "Perfect! When no access modifier is specified, Java uses package-private (also called default) access. This means the member is accessible within the same package but not from other packages.",
+    "incorrectExplanation": "The correct answer is 'package-private (default)'. When you don't specify an access modifier, Java assumes package-private access, allowing access within the same package only."
+  },
+  {
+    "question": "Which method must be implemented when implementing the Comparable interface?",
+    "a": "compare()",
+    "b": "compareTo()",
+    "c": "equals()",
+    "d": "hashCode()",
+    "answer": "b",
+    "correctExplanation": "Excellent! The Comparable interface requires implementing the compareTo() method. This method defines the natural ordering of objects and returns a negative, zero, or positive integer based on comparison.",
+    "incorrectExplanation": "The correct answer is 'compareTo()'. This method is used for natural ordering. compare() is in Comparator interface, while equals() and hashCode() are from Object class."
+  },
+  {
+    "question": "What happens if you don't provide a constructor in a Java class?",
+    "a": "Compilation error",
+    "b": "Runtime error",
+    "c": "Java provides a default no-arg constructor",
+    "d": "The class cannot be instantiated",
+    "answer": "c",
+    "correctExplanation": "Correct! If you don't provide any constructor, Java automatically provides a default no-argument constructor. However, if you define any constructor, Java won't provide the default one.",
+    "incorrectExplanation": "The correct answer is 'Java provides a default no-arg constructor'. This default constructor calls the parent class's no-arg constructor and allows object creation. If you define any constructor, you lose this automatic feature."
+  },
+  {
+    "question": "Which keyword is used to define an interface in Java?",
+    "a": "class",
+    "b": "interface",
+    "c": "abstract",
+    "d": "implement",
+    "answer": "b",
+    "correctExplanation": "Perfect! The 'interface' keyword is used to define an interface in Java. Interfaces define contracts that implementing classes must follow, containing abstract methods and constants.",
+    "incorrectExplanation": "The correct answer is 'interface'. This keyword creates a contract that classes can implement. 'class' defines classes, 'abstract' makes classes/methods abstract, 'implement' isn't a Java keyword."
+  },
+  {
+    "question": "What is the size of an int in Java?",
+    "a": "16 bits",
+    "b": "32 bits",
+    "c": "64 bits",
+    "d": "Platform dependent",
+    "answer": "b",
+    "correctExplanation": "Excellent! An int in Java is always 32 bits (4 bytes), regardless of the platform. This is part of Java's platform independence - data types have consistent sizes across all systems.",
+    "incorrectExplanation": "The correct answer is '32 bits'. Java guarantees consistent data type sizes across platforms. int is always 32 bits, long is 64 bits, short is 16 bits, and byte is 8 bits."
+  },
+  {
+    "question": "Which of these creates an infinite loop in Java?",
+    "a": "while(true)",
+    "b": "for(;;)",
+    "c": "do{}while(true)",
+    "d": "All of the above",
+    "answer": "d",
+    "correctExplanation": "Correct! All three create infinite loops. while(true) continuously loops, for(;;) omits all loop parts creating infinite iteration, and do{}while(true) keeps repeating the do block.",
+    "incorrectExplanation": "The correct answer is 'All of the above'. Each syntax creates an infinite loop using different loop constructs. They're all valid ways to create loops that never terminate naturally."
+  },
+  {
+    "question": "What is autoboxing in Java?",
+    "a": "Automatic memory management",
+    "b": "Automatic conversion between primitives and wrapper classes",
+    "c": "Automatic method calling",
+    "d": "Automatic variable initialization",
+    "answer": "b",
+    "correctExplanation": "Perfect! Autoboxing is the automatic conversion between primitive types (like int) and their corresponding wrapper classes (like Integer). Java handles this conversion automatically in appropriate contexts.",
+    "incorrectExplanation": "The correct answer is 'Automatic conversion between primitives and wrapper classes'. Autoboxing converts int to Integer, boolean to Boolean, etc. The reverse process is called unboxing."
+  },
+  {
+    "question": "Which exception is thrown when dividing by zero with integers in Java?",
+    "a": "NumberFormatException",
+    "b": "ArithmeticException",
+    "c": "IllegalArgumentException",
+    "d": "RuntimeException",
+    "answer": "b",
+    "correctExplanation": "Excellent! ArithmeticException is thrown when dividing integers by zero. Note that floating-point division by zero doesn't throw an exception but returns Infinity or NaN.",
+    "incorrectExplanation": "The correct answer is 'ArithmeticException'. This unchecked exception occurs during arithmetic operations like division by zero. NumberFormatException is for parsing errors."
+  },
+  {
+    "question": "What does the 'break' statement do in a switch statement?",
+    "a": "Exits the switch statement",
+    "b": "Continues to the next case",
+    "c": "Throws an exception",
+    "d": "Returns a value",
+    "answer": "a",
+    "correctExplanation": "Correct! The 'break' statement exits the switch statement completely. Without break, execution continues to the next case (called fall-through), which is usually not desired.",
+    "incorrectExplanation": "The correct answer is 'Exits the switch statement'. Without break, you get fall-through behavior where multiple cases execute. break prevents this by terminating switch execution."
+  },
+  {
+    "question": "Which method is used to start a thread in Java?",
+    "a": "run()",
+    "b": "start()",
+    "c": "execute()",
+    "d": "begin()",
+    "answer": "b",
+    "correctExplanation": "Perfect! The start() method is used to begin thread execution. It creates a new thread and calls the run() method in that thread. Never call run() directly as it executes in the current thread.",
+    "incorrectExplanation": "The correct answer is 'start()'. This method creates a new thread and calls run() in it. Calling run() directly executes in the current thread, not creating a new one."
+  },
+  {
+    "question": "What is the correct way to create a string in Java?",
+    "a": "String s = 'Hello'",
+    "b": "String s = \"Hello\"",
+    "c": "string s = \"Hello\"",
+    "d": "char s = \"Hello\"",
+    "answer": "b",
+    "correctExplanation": "Excellent! Strings in Java are created using double quotes. Single quotes are for char literals (single characters), and Java is case-sensitive so 'String' must be capitalized.",
+    "incorrectExplanation": "The correct answer is 'String s = \"Hello\"'. Java uses double quotes for strings and single quotes for chars. The class name 'String' must be capitalized, and 'char' is for single characters."
+  },
+  {
+    "question": "Which keyword is used to prevent method overriding in Java?",
+    "a": "static",
+    "b": "final",
+    "c": "private",
+    "d": "sealed",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'final' keyword prevents method overriding. When a method is declared final, subclasses cannot override it. This ensures the method's behavior remains unchanged.",
+    "incorrectExplanation": "The correct answer is 'final'. Final methods cannot be overridden by subclasses. 'private' methods aren't inherited so can't be overridden, 'static' methods can be hidden but not overridden."
+  },
+  {
+    "question": "What is the parent class of all classes in Java?",
+    "a": "Class",
+    "b": "Object",
+    "c": "Super",
+    "d": "Parent",
+    "answer": "b",
+    "correctExplanation": "Perfect! The Object class is the root of the Java class hierarchy. Every class implicitly extends Object, inheriting methods like toString(), equals(), and hashCode().",
+    "incorrectExplanation": "The correct answer is 'Object'. This class is at the top of Java's inheritance hierarchy. All classes inherit from Object, either directly or indirectly, gaining fundamental methods."
+  },
+  {
+    "question": "Which operator is used for string concatenation in Java?",
+    "a": "&",
+    "b": "+",
+    "c": "concat",
+    "d": "append",
+    "answer": "b",
+    "correctExplanation": "Excellent! The + operator is used for string concatenation in Java. It automatically converts other data types to strings when used with strings. There's also the concat() method.",
+    "incorrectExplanation": "The correct answer is '+'. This operator concatenates strings and converts other types to strings automatically. concat() is a method, not an operator, and & is for bitwise operations."
+  },
+  {
+    "question": "What is a package in Java?",
+    "a": "A compressed file",
+    "b": "A namespace for organizing classes",
+    "c": "A method parameter",
+    "d": "A data type",
+    "answer": "b",
+    "correctExplanation": "Correct! A package is a namespace that organizes related classes and interfaces. It helps avoid naming conflicts and provides access control. Packages are declared at the top of Java files.",
+    "incorrectExplanation": "The correct answer is 'A namespace for organizing classes'. Packages group related classes, prevent naming conflicts, and control access. They're fundamental to Java's organization system."
+  },
+  {
+    "question": "Which method is called to clean up resources when an object is garbage collected?",
+    "a": "finalize()",
+    "b": "cleanup()",
+    "c": "destroy()",
+    "d": "dispose()",
+    "answer": "a",
+    "correctExplanation": "Perfect! The finalize() method is called by the garbage collector before an object is destroyed. However, it's deprecated and unreliable - use try-with-resources or explicit cleanup methods instead.",
+    "incorrectExplanation": "The correct answer is 'finalize()'. Though deprecated, this method was designed for cleanup. Modern Java prefers try-with-resources and explicit resource management over finalize()."
+  },
+  {
+    "question": "What is the difference between abstract class and interface in Java?",
+    "a": "No difference",
+    "b": "Abstract classes can have concrete methods, interfaces cannot",
+    "c": "Interfaces can have concrete methods, abstract classes cannot",
+    "d": "Abstract classes are faster",
+    "answer": "b",
+    "correctExplanation": "Excellent! Abstract classes can have both abstract and concrete methods, constructors, and instance variables. Interfaces (before Java 8) could only have abstract methods, though modern interfaces can have default and static methods.",
+    "incorrectExplanation": "The correct answer is 'Abstract classes can have concrete methods, interfaces cannot'. While modern interfaces have default methods, abstract classes offer more flexibility with constructors and instance variables."
+  },
+  {
+    "question": "Which loop is best for iterating over collections in Java?",
+    "a": "for loop",
+    "b": "while loop",
+    "c": "enhanced for loop (for-each)",
+    "d": "do-while loop",
+    "answer": "c",
+    "correctExplanation": "Correct! The enhanced for loop (for-each) is ideal for collections. It's cleaner, less error-prone, and more readable: for(Type item : collection). It handles iteration automatically without index management.",
+    "incorrectExplanation": "The correct answer is 'enhanced for loop (for-each)'. This loop simplifies collection iteration, reduces errors, and improves readability. It's the preferred way to iterate when you don't need the index."
+  },
+  {
+    "question": "What does the 'volatile' keyword do in Java?",
+    "a": "Makes variables unchangeable",
+    "b": "Ensures visibility across threads",
+    "c": "Makes methods abstract",
+    "d": "Handles exceptions",
+    "answer": "b",
+    "correctExplanation": "Perfect! The 'volatile' keyword ensures that changes to a variable are immediately visible to all threads. It prevents thread-local caching of the variable, ensuring consistency in multi-threaded environments.",
+    "incorrectExplanation": "The correct answer is 'Ensures visibility across threads'. Volatile prevents caching and ensures all threads see the latest value. 'final' makes variables unchangeable, not volatile."
+  },
+  {
+    "question": "Which collection maintains insertion order and allows duplicates?",
+    "a": "HashSet",
+    "b": "TreeSet",
+    "c": "ArrayList",
+    "d": "HashMap",
+    "answer": "c",
+    "correctExplanation": "Excellent! ArrayList maintains insertion order and allows duplicate elements. It's implemented as a resizable array and provides indexed access to elements.",
+    "incorrectExplanation": "The correct answer is 'ArrayList'. Lists maintain order and allow duplicates. Sets don't allow duplicates, and HashMap stores key-value pairs with unique keys."
+  },
+  {
+    "question": "What is the purpose of the 'synchronized' keyword in Java?",
+    "a": "Makes methods faster",
+    "b": "Prevents concurrent access to methods/blocks",
+    "c": "Makes variables constant",
+    "d": "Handles file operations",
+    "answer": "b",
+    "correctExplanation": "Correct! The 'synchronized' keyword prevents multiple threads from accessing a method or block simultaneously. It ensures thread safety by allowing only one thread at a time to execute synchronized code.",
+    "incorrectExplanation": "The correct answer is 'Prevents concurrent access to methods/blocks'. Synchronized ensures thread safety by controlling access. It doesn't make code faster - it can actually slow it down due to locking overhead."
+  },
+  {
+    "question": "Which exception handling block is always executed in Java?",
+    "a": "try",
+    "b": "catch",
+    "c": "finally",
+    "d": "throws",
+    "answer": "c",
+    "correctExplanation": "Perfect! The 'finally' block always executes, whether an exception occurs or not. It's used for cleanup code like closing files or releasing resources. Only System.exit() can prevent finally execution.",
+    "incorrectExplanation": "The correct answer is 'finally'. This block executes regardless of exceptions, making it perfect for cleanup code. try contains risky code, catch handles exceptions, throws declares exceptions."
+  },
+  {
+    "question": "What is the difference between ArrayList and LinkedList?",
+    "a": "No difference",
+    "b": "ArrayList uses arrays, LinkedList uses nodes",
+    "c": "ArrayList is slower for all operations",
+    "d": "LinkedList doesn't allow duplicates",
+    "answer": "b",
+    "correctExplanation": "Correct! ArrayList is backed by a resizable array offering fast random access, while LinkedList uses doubly-linked nodes offering fast insertion/deletion. Choose based on your primary operations.",
+    "incorrectExplanation": "The correct answer is 'ArrayList uses arrays, LinkedList uses nodes'. ArrayList excels at random access, LinkedList at insertion/deletion. Both allow duplicates and implement the List interface."
+  },
+  {
+    "question": "Which keyword is used to create anonymous inner classes?",
+    "a": "anonymous",
+    "b": "inner",
+    "c": "new",
+    "d": "class",
+    "answer": "c",
+    "correctExplanation": "Excellent! Anonymous inner classes are created using 'new' followed by a class or interface name and immediate implementation. They're useful for one-time implementations of interfaces or extending classes.",
+    "incorrectExplanation": "The correct answer is 'new'. Anonymous classes use 'new ClassName() { ... }' or 'new InterfaceName() { ... }' syntax. There's no special 'anonymous' keyword in Java."
+  },
+  {
+    "question": "What is the purpose of the hashCode() method in Java?",
+    "a": "To encrypt objects",
+    "b": "To provide hash values for hash-based collections",
+    "c": "To compare objects",
+    "d": "To convert objects to strings",
+    "answer": "b",
+    "correctExplanation": "Perfect! The hashCode() method returns an integer hash value used by hash-based collections like HashMap and HashSet for efficient storage and retrieval. Objects that are equal should have the same hash code.",
+    "incorrectExplanation": "The correct answer is 'To provide hash values for hash-based collections'. hashCode() enables efficient hashing in collections. It works with equals() to maintain the hash table contract."
+  }
+]

@@ -40,7 +40,7 @@ export function shuffleArray<T>(array: T[]): T[] {
 
 export async function loadQuizQuestions(className: string): Promise<QuizQuestion[]> {
   try {
-    const response = await fetch(`/src/data/${className}.json`);
+    const response = await fetch(`/data/${className}.json`);
     if (!response.ok) {
       throw new Error(`Failed to load ${className} questions`);
     }
