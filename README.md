@@ -1,52 +1,106 @@
-# Astro Starter Kit: Basics
+# Lock In - Programming Quiz Game
 
-```sh
-npm create astro@latest -- --template basics
+Welcome to Lock In! This is an interactive multiple-choice quiz application built with Astro to test your programming knowledge and help you lock in your skills.
+
+## Features
+
+- � Multiple programming languages (C++, Java, Python)
+- 🎯 Multiple choice questions with instant feedback
+- 📊 Score tracking and grade calculation
+- 🎨 Beautiful, responsive design
+- 🔄 Retake quizzes and switch between languages
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── ClassSelector.astro    # Language selection
+│   ├── QuizScreen.astro      # Quiz question display
+│   ├── QuizExplanation.astro # Answer explanations
+│   └── QuizResults.astro     # Results and scoring
+├── data/
+│   ├── cpp-class.json         # C++ programming questions
+│   ├── java-class.json        # Java programming questions
+│   └── python-class.json      # Python programming questions
+├── layouts/
+│   └── Layout.astro           # Main page layout
+├── pages/
+│   └── index.astro           # Main quiz application
+├── styles/
+│   └── quiz.ts               # Centralized quiz styles
+├── types/
+│   └── quiz.ts               # TypeScript interfaces
+└── utils/
+    └── quiz-helpers.ts       # Shared utility functions
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Quiz Question Format
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Each JSON file in the `src/data/` directory represents a different programming language. Questions follow this schema:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```json
+{
+  "question": "Question text here?",
+  "a": "Option A",
+  "b": "Option B", 
+  "c": "Option C",
+  "d": "Option D",
+  "answer": "b"
+}
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Adding New Programming Languages
 
-## 🧞 Commands
+1. Create a new JSON file in `src/data/` (e.g., `javascript-class.json`)
+2. Add programming questions following the schema above
+3. Update the `availableClasses` array in `src/components/ClassSelector.astro`
 
-All commands are run from the root of the project, from a terminal:
+## Getting Started
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## 👀 Want to learn more?
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3. Open your browser and navigate to the local server URL
+
+4. Click "Start Quiz Game" from the home page
+
+## How to Play
+
+1. **Select a Programming Language**: Choose from C++, Java, or Python
+2. **Answer Questions**: Read each programming question and select your answer (A, B, C, or D)
+3. **Submit**: Click "Submit Answer" to proceed to the next question
+4. **View Results**: See your final score, percentage, and grade
+5. **Retake or Switch**: Choose to retake the same quiz or try a different programming language
+
+## Grading Scale
+
+- A: 90-100%
+- B: 80-89%
+- C: 70-79%
+- D: 60-69%
+- F: Below 60%
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory, ready for deployment.
+
+## Technologies Used
+
+- **Astro**: Static site generator and framework
+- **TypeScript**: Type-safe JavaScript
+- **CSS**: Custom styling with modern CSS features
+- **JSON**: Question data storage
+
+Enjoy learning and testing your programming knowledge! 💻🎓

@@ -1,0 +1,207 @@
+---
+const availableClasses = [
+  { id: 'cpp-class', name: 'C++', description: 'C++ programming fundamentals', icon: '⚡' },
+  { id: 'java-class', name: 'Java', description: 'Java programming concepts', icon: '☕' },
+  { id: 'python-class', name: 'Python', description: 'Python programming basics', icon: '🐍' }
+];
+---
+
+<div class="class-selector">
+  <div class="selector-header">
+    <h2>Lock In Today</h2>
+    <p>Select a programming language to test your knowledge</p>
+  </div>
+  
+  <div class="class-grid">
+    {availableClasses.map(classItem => (
+      <button 
+        class="class-card" 
+        data-class-id={classItem.id}
+      >
+        <div class="class-icon">{classItem.icon}</div>
+        <h3 class="class-name">{classItem.name}</h3>
+        <p class="class-description">{classItem.description}</p>
+      </button>
+    ))}
+  </div>
+  
+  <footer class="footer">
+    <a href="https://github.com/smallnumbers0?tab=overview&from=2025-04-01&to=2025-04-30" target="_blank" rel="noopener noreferrer" class="github-link">
+      <i class="fab fa-github"></i>
+    </a>
+  </footer>
+</div>
+
+<style>
+  .class-selector {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .selector-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .selector-header h2 {
+    font-size: 2.5rem;
+    color: #e0e0e0;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+    letter-spacing: -1px;
+  }
+
+  .selector-header h2::before {
+    content: '> ';
+    color: #9333ea;
+  }
+
+  .selector-header p {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+  }
+
+  .class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .class-card {
+    background: linear-gradient(145deg, #1a1a1a 0%, #2a1a2a 100%);
+    border: 2px solid #333;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+      0 4px 15px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .class-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .class-card:hover::before {
+    left: 100%;
+  }
+
+  .class-card:hover {
+    border-color: #9333ea;
+    transform: translateY(-8px);
+    box-shadow: 
+      0 12px 25px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(147, 51, 234, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .class-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.5));
+  }
+
+  .class-name {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+  }
+
+  .class-description {
+    color: #a0a0a0;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+  }
+
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(145deg, #1a1a1a 0%, #2a1a2a 100%);
+    border: 2px solid #333;
+    border-radius: 50%;
+    color: #a0a0a0;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 
+      0 4px 15px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .github-link:hover {
+    color: #e0e0e0;
+    border-color: #9333ea;
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 20px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(147, 51, 234, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 640px) {
+    .class-selector {
+      padding: 1rem;
+    }
+
+    .selector-header h2 {
+      font-size: 2rem;
+    }
+
+    .class-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .class-card {
+      padding: 1.5rem;
+    }
+
+    .class-icon {
+      font-size: 3rem;
+    }
+  }
+</style>
+
+<script>
+  const classCards = document.querySelectorAll('.class-card');
+  
+  classCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const classId = card.getAttribute('data-class-id');
+      if (classId) {
+        window.dispatchEvent(new CustomEvent('class-selected', { 
+          detail: { classId } 
+        }));
+      }
+    });
+  });
+</script>

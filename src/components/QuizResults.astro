@@ -1,0 +1,177 @@
+---
+export interface Props {
+  score: number;
+  totalQuestions: number;
+  className: string;
+}
+
+const { score, totalQuestions, className } = Astro.props;
+const wrongAnswers = totalQuestions - score;
+---
+
+<div class="quiz-results">
+  <div class="results-header">
+    <h2>Quiz Complete!</h2>
+    <div class="class-name">{className.replace('-', ' ').toUpperCase()}</div>
+  </div>
+  
+  <div class="score-display">
+    <div class="score-circle">
+      <div class="score-text">
+        <span class="score-number">{score}/{totalQuestions}</span>
+        <span class="wrong-count">{wrongAnswers} wrong</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="results-actions">
+    <button id="retake-quiz" class="btn btn-primary">
+      Retake Quiz
+    </button>
+    <button id="choose-different" class="btn btn-secondary">
+      Choose Different Class
+    </button>
+  </div>
+</div>
+
+<style>
+  .quiz-results {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .results-header h2 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .class-name {
+    font-size: 1.1rem;
+    color: #718096;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  .score-display {
+    margin: 3rem 0;
+  }
+
+  .score-circle {
+    width: 200px;
+    height: 200px;
+    border: 8px solid;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .score-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .score-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2d3748;
+    line-height: 1;
+  }
+
+  .percentage {
+    font-size: 1.5rem;
+    color: #718096;
+    margin-top: 0.5rem;
+  }
+
+  .grade {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .results-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 180px;
+  }
+
+  .btn-primary {
+    background: #4299e1;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: #e2e8f0;
+    color: #4a5568;
+  }
+
+  .btn-secondary:hover {
+    background: #cbd5e0;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 640px) {
+    .quiz-results {
+      padding: 2rem 1rem;
+    }
+
+    .score-circle {
+      width: 150px;
+      height: 150px;
+    }
+
+    .score-number {
+      font-size: 2rem;
+    }
+
+    .percentage {
+      font-size: 1.2rem;
+    }
+
+    .results-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      min-width: 200px;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('retake-quiz')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('quiz-retake'));
+  });
+
+  document.getElementById('choose-different')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('quiz-choose-different'));
+  });
+</script>

@@ -1,11 +1,353 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ClassSelector from '../components/ClassSelector.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Lock In - Programming Quiz">
+  <main>
+    <div id="app">
+      <div id="class-selector-screen" class="screen active">
+        <ClassSelector />
+      </div>
+
+ 
+      <div id="quiz-screen" class="screen">
+        <div id="quiz-content">
+         
+        </div>
+      </div>
+
+   
+      <div id="results-screen" class="screen">
+        <div id="results-content">
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>
+
+<style>
+  main {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at center, #1a0f2e 0%, #0a0a0a 70%);
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(90deg, transparent 0%, rgba(147, 51, 234, 0.03) 50%, transparent 100%),
+      linear-gradient(0deg, transparent 0%, rgba(147, 51, 234, 0.03) 50%, transparent 100%);
+    background-size: 100px 100px;
+    animation: grid-move 20s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100px, 100px); }
+  }
+
+  .screen {
+    display: none;
+  }
+
+  .screen.active {
+    display: block;
+  }
+
+  #app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
+<script>
+  import type { QuizQuestion, QuizState } from '../types/quiz';
+  import { quizStyles } from '../styles/quiz.ts';
+  import { 
+    getAnswerText, 
+    formatClassName, 
+    updateButtonState, 
+    calculateWrongAnswers,
+    loadQuizQuestions,
+    shuffleArray
+  } from '../utils/quiz-helpers.ts';
+
+  let quizState: QuizState = {
+    questions: [],
+    currentQuestionIndex: 0,
+    score: 0,
+    selectedAnswers: [],
+    isComplete: false
+  };
+
+  let currentClassName = '';
+
+  function showScreen(screenId: string) {
+    document.querySelectorAll('.screen').forEach(screen => {
+      screen.classList.remove('active');
+    });
+    document.getElementById(screenId)?.classList.add('active');
+  }
+
+  async function startQuiz(className: string) {
+    currentClassName = className;
+    const questions = await loadQuizQuestions(className);
+    
+    if (questions.length === 0) {
+      return;
+    }
+
+    quizState = {
+      questions,
+      currentQuestionIndex: 0,
+      score: 0,
+      selectedAnswers: [],
+      isComplete: false
+    };
+
+    showCurrentQuestion();
+    showScreen('quiz-screen');
+  }
+
+  function showCurrentQuestion() {
+    if (quizState.currentQuestionIndex >= quizState.questions.length) {
+      showResults();
+      return;
+    }
+
+    const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
+    const questionNumber = quizState.currentQuestionIndex + 1;
+    const totalQuestions = quizState.questions.length;
+
+    renderQuizScreen(currentQuestion, questionNumber, totalQuestions);
+  }
+
+  function renderQuizScreen(question: QuizQuestion, questionNumber: number, totalQuestions: number) {
+    const quizContent = document.getElementById('quiz-content');
+    if (!quizContent) return;
+
+    quizContent.innerHTML = createQuizHTML(question, questionNumber, totalQuestions);
+    setupQuestionHandlers();
+  }
+
+  function createQuizHTML(question: QuizQuestion, questionNumber: number, totalQuestions: number): string {
+    return `
+      <div class="quiz-question">
+        <div class="question-header">
+          <div class="header-content">
+            <h2>Question ${questionNumber} of ${totalQuestions}</h2>
+            <button id="exit-quiz" class="exit-button" title="Exit Quiz">✕</button>
+          </div>
+        </div>
+        
+        <div class="question-content">
+          <h3>${question.question}</h3>
+          
+          <form class="answer-options" id="quiz-form">
+            ${createAnswerOptionsHTML(question)}
+          </form>
+          
+          <button id="submit-answer" type="button" disabled>Submit Answer</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function createAnswerOptionsHTML(question: QuizQuestion): string {
+    const options = [
+      { letter: 'A', value: 'a', text: question.a },
+      { letter: 'B', value: 'b', text: question.b },
+      { letter: 'C', value: 'c', text: question.c },
+      { letter: 'D', value: 'd', text: question.d }
+    ];
+
+    return options.map(option => `
+      <label class="option">
+        <input type="radio" name="answer" value="${option.value}" />
+        <span class="option-letter">${option.letter}</span>
+        <span class="option-text">${option.text}</span>
+      </label>
+    `).join('');
+  }
+
+  function setupQuestionHandlers() {
+    const form = document.getElementById('quiz-form') as HTMLFormElement;
+    const submitButton = document.getElementById('submit-answer') as HTMLButtonElement;
+    const exitButton = document.getElementById('exit-quiz') as HTMLButtonElement;
+    const radioInputs = form?.querySelectorAll('input[type="radio"]');
+
+    radioInputs?.forEach(radio => {
+      radio.addEventListener('change', () => {
+        submitButton.disabled = false;
+      });
+    });
+
+    submitButton?.addEventListener('click', () => {
+      const formData = new FormData(form);
+      const selectedAnswer = formData.get('answer') as string;
+      
+      if (selectedAnswer) {
+        handleAnswer(selectedAnswer);
+      }
+    });
+
+    exitButton?.addEventListener('click', () => {
+      if (confirm('Are you sure you want to exit the quiz? Your progress will be lost.')) {
+        showScreen('class-selector-screen');
+      }
+    });
+  }
+
+  function handleAnswer(selectedAnswer: string) {
+    const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
+    const isCorrect = currentQuestion.answer === selectedAnswer;
+
+    if (isCorrect) {
+      quizState.score++;
+    }
+
+    quizState.selectedAnswers.push(selectedAnswer);
+    showReasoning(isCorrect, currentQuestion, selectedAnswer);
+  }
+
+  function showReasoning(isCorrect: boolean, question: QuizQuestion, selectedAnswer: string) {
+    const submitButton = document.getElementById('submit-answer') as HTMLButtonElement;
+    if (submitButton) {
+      const buttonText = isCorrect ? 'Correct!' : 'Incorrect!';
+      const buttonColor = isCorrect ? '#22c55e' : '#ef4444';
+      updateButtonState(submitButton, buttonText, buttonColor, true);
+    }
+
+    const explanation = isCorrect ? question.correctExplanation : question.incorrectExplanation;
+    renderExplanation(isCorrect, question, explanation);
+  }
+
+  function renderExplanation(isCorrect: boolean, question: QuizQuestion, explanation: string) {
+    const quizContent = document.getElementById('quiz-content');
+    if (!quizContent) return;
+
+    const explanationHTML = createExplanationHTML(isCorrect, question, explanation);
+    quizContent.innerHTML += explanationHTML;
+    setupContinueButton();
+  }
+
+  function createExplanationHTML(isCorrect: boolean, question: QuizQuestion, explanation: string): string {
+    const correctAnswerText = getAnswerText(question, question.answer);
+    
+    return `
+      <div class="reasoning-container">
+        <div class="reasoning-header">
+          <h3>${isCorrect ? 'Correct Answer!' : 'Incorrect Answer'}</h3>
+          <p class="correct-answer">Correct answer: ${question.answer.toUpperCase()}) ${correctAnswerText}</p>
+        </div>
+        <div class="reasoning-content">
+          <div class="explanation-text">${explanation}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  function setupContinueButton() {
+    const submitButton = document.getElementById('submit-answer') as HTMLButtonElement;
+    if (!submitButton) return;
+
+    const isLastQuestion = quizState.currentQuestionIndex + 1 >= quizState.questions.length;
+    const buttonText = isLastQuestion ? 'View Results' : 'Continue to Next Question';
+    const buttonColor = 'linear-gradient(145deg, #9333ea 0%, #7c3aed 100%)';
+    
+    updateButtonState(submitButton, buttonText, buttonColor, false);
+    submitButton.style.borderColor = '#9333ea';
+    
+    const newButton = submitButton.cloneNode(true) as HTMLButtonElement;
+    submitButton.parentNode?.replaceChild(newButton, submitButton);
+    
+    newButton.addEventListener('click', () => {
+      quizState.currentQuestionIndex++;
+      if (quizState.currentQuestionIndex >= quizState.questions.length) {
+        showResults();
+      } else {
+        showCurrentQuestion();
+      }
+    });
+  }
+
+  function showResults() {
+    quizState.isComplete = true;
+    const totalQuestions = quizState.questions.length;
+
+    renderResultsScreen(quizState.score, totalQuestions, currentClassName);
+  }
+
+  function renderResultsScreen(score: number, totalQuestions: number, className: string) {
+    const resultsContent = document.getElementById('results-content');
+    if (!resultsContent) return;
+
+    resultsContent.innerHTML = createResultsHTML(score, totalQuestions, className);
+    setupResultsHandlers();
+    showScreen('results-screen');
+  }
+
+  function createResultsHTML(score: number, totalQuestions: number, className: string): string {
+    const wrongAnswers = calculateWrongAnswers(score, totalQuestions);
+    const formattedClassName = formatClassName(className);
+    
+    return `
+      <div class="quiz-results">
+        <div class="results-header">
+          <h2>Quiz Complete!</h2>
+          <div class="class-name">${formattedClassName}</div>
+        </div>
+        
+        <div class="score-display">
+          <div class="score-circle">
+            <div class="score-text">
+              <span class="score-number">${score}/${totalQuestions}</span>
+              <span class="wrong-count">${wrongAnswers} wrong</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="results-actions">
+          <button id="retake-quiz" class="btn btn-primary">
+            Retake Quiz
+          </button>
+          <button id="choose-different" class="btn btn-secondary">
+            Choose Different Class
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  function setupResultsHandlers() {
+    document.getElementById('retake-quiz')?.addEventListener('click', () => {
+      startQuiz(currentClassName);
+    });
+
+    document.getElementById('choose-different')?.addEventListener('click', () => {
+      showScreen('class-selector-screen');
+    });
+  }
+
+  window.addEventListener('class-selected', (event: Event) => {
+    const customEvent = event as CustomEvent;
+    const { classId } = customEvent.detail;
+    startQuiz(classId);
+  });
+
+  const style = document.createElement('style');
+  style.textContent = quizStyles;
+  document.head.appendChild(style);
+</script>

@@ -1,0 +1,53 @@
+---
+import type { QuizQuestion } from '../types/quiz';
+
+export interface Props {
+  question: QuizQuestion;
+  questionNumber: number;
+  totalQuestions: number;
+  showExitButton?: boolean;
+}
+
+const { question, questionNumber, totalQuestions, showExitButton = true } = Astro.props;
+---
+
+<div class="quiz-question">
+  <div class="question-header">
+    <div class="header-content">
+      <h2>Question {questionNumber} of {totalQuestions}</h2>
+      {showExitButton && <button id="exit-quiz" class="exit-button" title="Exit Quiz">✕</button>}
+    </div>
+  </div>
+  
+  <div class="question-content">
+    <h3>{question.question}</h3>
+    
+    <form class="answer-options" id="quiz-form">
+      <label class="option">
+        <input type="radio" name="answer" value="a" />
+        <span class="option-letter">A</span>
+        <span class="option-text">{question.a}</span>
+      </label>
+      
+      <label class="option">
+        <input type="radio" name="answer" value="b" />
+        <span class="option-letter">B</span>
+        <span class="option-text">{question.b}</span>
+      </label>
+      
+      <label class="option">
+        <input type="radio" name="answer" value="c" />
+        <span class="option-letter">C</span>
+        <span class="option-text">{question.c}</span>
+      </label>
+      
+      <label class="option">
+        <input type="radio" name="answer" value="d" />
+        <span class="option-letter">D</span>
+        <span class="option-text">{question.d}</span>
+      </label>
+    </form>
+    
+    <button id="submit-answer" type="button" disabled>Submit Answer</button>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+---
+import type { QuizQuestion } from '../types/quiz';
+
+interface Props {
+  isCorrect: boolean;
+  question: QuizQuestion;
+  explanation: string;
+}
+
+const { isCorrect, question, explanation } = Astro.props;
+
+function getAnswerText(question: QuizQuestion, option: string): string {
+  switch(option) {
+    case 'a': return question.a;
+    case 'b': return question.b;
+    case 'c': return question.c;
+    case 'd': return question.d;
+    default: return '';
+  }
+}
+---
+
+<div class="reasoning-container">
+  <div class="reasoning-header">
+    <h3>{isCorrect ? 'Correct Answer!' : 'Incorrect Answer'}</h3>
+    <p class="correct-answer">Correct answer: {question.answer.toUpperCase()}) {getAnswerText(question, question.answer)}</p>
+  </div>
+  <div class="reasoning-content">
+    <div class="explanation-text" set:html={explanation}></div>
+  </div>
+</div>
